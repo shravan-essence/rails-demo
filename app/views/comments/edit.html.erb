@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body style="background: white;">
+  <%= form_with model: [@article, @comment] do |form|%>
+    <p>
+      <%= form.label :commenter %><br>
+      <%= form.text_field :commenter%>
+    </p>
+
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body%>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</body>
+</html>

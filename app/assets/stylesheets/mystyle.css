@@ -1,0 +1,39 @@
+h1{
+	background: lightgray;
+}
+
+ul {
+	list-style: none;
+	padding: 0!important;
+}
+
+
+a{
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 0 solid black;
+	background-color: skyblue;
+	border-radius: 3px;
+	color: white;
+}
+
+a:hover {
+	background-color: slateblue;
+}
+
+input[type=submit] {
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 0 solid black;
+	background-color: skyblue;
+	border-radius: 3px;
+	color: white;
+}
+
+div.back {
+	margin-top: 20px;
+}
+
+div.description{
+	margin-left: 30px;
+}
