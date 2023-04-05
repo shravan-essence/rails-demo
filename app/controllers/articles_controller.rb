@@ -25,6 +25,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    p "1111111111111111111"
+    p article_params
+    p "1111111111111111111"
+    
     @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to@article

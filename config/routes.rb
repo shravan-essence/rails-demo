@@ -12,4 +12,10 @@ Rails.application.routes.draw do
       get :published 
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :articles
+    end
+  end
 end
