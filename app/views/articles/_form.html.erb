@@ -23,7 +23,10 @@
         <div><%= message %></div>
       <% end %>
     </div>
-    
+      <div>
+      <%= form.label :published %><br>
+      <%= form.select(:published, options_for_select([['Yes',true],['No', false]])) %>
+    </div>
     <div>
       <%= form.submit %>
     </div>

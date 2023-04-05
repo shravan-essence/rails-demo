@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body style="background: white;">
+	<%= link_to "Home", root_path %>
+	<ul>
+	  <% @articles.each do |article| %>
+	    <li>
+	      <h2><%= article.title %></h2>
+	    </li>
+
+	    <li>
+	    	<div class="description">
+		    	<%= article.body %>
+	      </div>
+	    </li> <br/>
+	  <% end %>
+	</ul>
+
+</body>
+</html>

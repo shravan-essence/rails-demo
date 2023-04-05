@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   #get "/", to: "articles#index"
   #get "/articles/website", to: "website#index"
   #get "/articles/:id", to: "articles#show"
-  resources :articles do 
+  resources :articles do
     resources :comments
+    collection do
+      get :published 
+    end
   end
 end
