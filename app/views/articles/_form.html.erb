@@ -6,8 +6,8 @@
   <title></title>
 </head>
 <body style="background: white;">
-  <h1>New Article</h1>
-  <%= form_with model: article do |form| %>
+  <h1>New Article...</h1>
+  <%= form_with model: article, local: true do |form| %>
     <div>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
@@ -25,7 +25,8 @@
     </div>
       <div>
       <%= form.label :published %><br>
-      <%= form.select(:published, options_for_select([['Yes',true],['No', false]])) %>
+      <%#= form.select(:published, options_for_select([['Yes',true],['No', false]])) %>
+      <%= form.check_box :published%>
     </div>
     <div>
       <%= form.submit %>

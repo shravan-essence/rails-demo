@@ -1,7 +1,6 @@
 class Article < ApplicationRecord
+	include ArticleValidation
 	has_many :comments, :dependent => :destroy
-	validates :title, presence: true
-	validates :body, presence: true, length: {minimum: 10}
-
+	has_many :likes, through: :comments
 	scope :published, ->{where(published: true)}
 end

@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
+  include CommentValidation
   belongs_to :article
-  validates :commenter, presence: true
-  validates :body, presence: true, length: {minimum: 10}
+  has_many :likes
 end
