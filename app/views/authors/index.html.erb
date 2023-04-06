@@ -11,29 +11,19 @@
 		<h1>Articles</h1>
 	</div>
 	<ul>
-	  <% @articles.each do |article| %>
+	  <% @authors.each do |author| %>
 	    <li>
-	      <h2><%= article.title %></h2>
+	      <h2><%= author.name %></h2>
 	    </li>
 
 	    <li>
 	    	<div class="description">
-		    	<%= article.body %>
-		    	<%= link_to "Open Article", article, class: "btn btn-primary", onclick: "myfunc()"%>
+		    	<%= author.city %>
+		    	<%= link_to "Open Author profile", author, class: "btn btn-primary"%>
 	      </div>
 	    </li> <br/>
 	  <% end %>
 	</ul>
-	<%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
-	<%= link_to "Show Published articles ", published_articles_path(@articles), class: "btn btn-primary"%>
-	<br>
-	<%= link_to "Authors", authors_path, class: "btn btn-primary" %>
-	<script type="text/javascript">
-		
-			function myfunc(){
-				alert("Hello");
-			}
-	
-	</script>
+	<%= link_to "New Author", new_author_path, class: "btn btn-primary" %>
 </body>
 </html>
