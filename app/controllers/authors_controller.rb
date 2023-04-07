@@ -1,3 +1,5 @@
+require_dependency 'weather_service'
+require 'gchart'
 class AuthorsController < ApplicationController
 	def index
 		@authors = Author.all
@@ -5,6 +7,8 @@ class AuthorsController < ApplicationController
 
 	def show
 		@author = Author.find(params[:id])
+		@city = @author.city || "New York"
+    @weather_data = WeatherService.fetch_weather(@city)
 	end
 
 	def new
@@ -18,6 +22,12 @@ class AuthorsController < ApplicationController
 		else
 			render :new, status: 404
 		end
+	end
+
+	def destroy
+		@author = Author.find(params[:id])
+		@author.destroy
+		redirect_to @author
 	end
 
 	private

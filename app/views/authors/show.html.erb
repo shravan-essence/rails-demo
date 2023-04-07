@@ -1,1 +1,24 @@
-<h1> hello<h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body style="background: white;">
+	<%= link_to "Back to Authors", authors_path %>
+
+	<h2><%= @author.name %></h2>
+	<p><%= @author.city %></p>
+	<div>
+		<% if @weather_data.present? %>
+		  <p><%= @weather_data[:temp_c] %> degrees Celsius, <%= @weather_data[:condition_text] %></p>
+		  <%= image_tag @weather_data[:icon_url] %>
+		<% else %>
+		  <p>No weather information available.</p>
+		<% end %>
+	</div>
+	<%= link_to "Delete", author_path(@author), data: {turbo_method: :delete,
+	turbo_confirm: "Are you sure?"} %>
+</body>
+</html>
