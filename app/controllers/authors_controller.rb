@@ -7,8 +7,9 @@ class AuthorsController < ApplicationController
 
 	def show
 		@author = Author.find(params[:id])
-		@city = @author.city || "New York"
-    @weather_data = WeatherService.fetch_weather(@city)
+		# city = @author.city || "New York"
+		weather_service =  WeatherService.new(@author.city)
+    @weather_data = weather_service.call
 	end
 
 	def new
