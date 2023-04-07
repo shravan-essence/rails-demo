@@ -1,13 +1,11 @@
 require_dependency 'weather_service'
-require 'gchart'
 class AuthorsController < ApplicationController
 	def index
 		@authors = Author.all
 	end
 
 	def show
-		@author = Author.find(params[:id])
-		# city = @author.city || "New York"
+		@author = Author.find_by(params[:id])
 		weather_service =  WeatherService.new(@author.city)
     @weather_data = weather_service.call
 	end
