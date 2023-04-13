@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "articles", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_105131) do
+  create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -24,14 +21,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
     t.index ["book_id"], name: "index_articles_on_book_id"
   end
 
-  create_table "authors", force: :cascade do |t|
+  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -39,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
     t.string "owner"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
     t.bigint "article_id", null: false
@@ -51,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.integer "mobile_no"
@@ -59,21 +56,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers_groceries", id: false, force: :cascade do |t|
+  create_table "customers_groceries", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "customer_id", null: false
     t.bigint "grocery_id", null: false
     t.index ["customer_id"], name: "index_customers_groceries_on_customer_id"
     t.index ["grocery_id"], name: "index_customers_groceries_on_grocery_id"
   end
 
-  create_table "groceries", force: :cascade do |t|
+  create_table "groceries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "count"
     t.bigint "comment_id"
     t.datetime "created_at", null: false
@@ -81,21 +78,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
     t.index ["comment_id"], name: "index_likes_on_comment_id"
   end
 
-  create_table "table_authors", force: :cascade do |t|
+  create_table "table_authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "test1s", force: :cascade do |t|
+  create_table "test1s", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.text "body"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
