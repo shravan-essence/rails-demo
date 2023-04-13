@@ -14,6 +14,14 @@
         <div><%= message %></div>
     <% end %>
   </p>
+   <p>
+    <%= form.label :commentable_type   %><br>
+    <%= form.select(:commentable_type, options_for_select([[@article.class.name,@article.class.name]], @article.class.name))%>
+  </p>
+   <p>
+    <%= form.label :commentable_id %><br>
+    <%= form.select(:commentable_id, options_for_select([[@article.id,@article.id]], @article.id))%>
+  </p>
   <p>
     <%= form.submit %>
   </p>

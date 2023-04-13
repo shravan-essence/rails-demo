@@ -5,7 +5,7 @@ class CreateUser < ActiveRecord::Migration[7.0]
       t.timestamps
     end
     execute <<-SQL
-      ALTER TABLE users ADD mobile_no Number;
+      ALTER TABLE users ADD mobile_no integer;
     SQL
   end
 

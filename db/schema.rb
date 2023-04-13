@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_075134) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_072352) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "book_id"
+    t.bigint "book_id"
     t.boolean "published", default: true
     t.index ["book_id"], name: "index_articles_on_book_id"
   end
@@ -34,17 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_075134) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "owner"
-    t.index ["owner"], name: "index_Books_on_owner"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "article_id", null: false
+    t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "commentable_type"
-    t.integer "commentable_id"
+    t.bigint "commentable_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
   end
@@ -58,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_075134) do
   end
 
   create_table "customers_groceries", id: false, force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "grocery_id", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "grocery_id", null: false
     t.index ["customer_id"], name: "index_customers_groceries_on_customer_id"
     t.index ["grocery_id"], name: "index_customers_groceries_on_grocery_id"
   end
@@ -73,15 +75,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_075134) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "count"
+    t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+  end
+
+  create_table "table_authors", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "test1s", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "body"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "mobile_no"
+    t.integer "mobile_no"
   end
 
   add_foreign_key "articles", "books"

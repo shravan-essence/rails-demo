@@ -5,7 +5,7 @@ class AuthorsController < ApplicationController
 	end
 
 	def show
-		@author = Author.find_by(params[:id])
+		@author = Author.find(params[:id])
 		weather_service =  WeatherService.new(@author.city)
     @weather_data = weather_service.call
 	end
@@ -15,7 +15,7 @@ class AuthorsController < ApplicationController
 	end
 
 	def create
-		@author = Author.new(author_params)
+		@author = Author.new(author_params())
 		if @author.save
 			redirect_to @author
 		else
