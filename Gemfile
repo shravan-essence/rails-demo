@@ -33,8 +33,13 @@ gem 'bootstrap', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+# For caching data using Redis
+gem 'redis', '~> 4.0'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
+
+# Sidekiq gem for background job
+gem 'sidekiq' 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

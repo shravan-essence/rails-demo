@@ -6,7 +6,7 @@
   <title></title>
 </head>
 <body style="background: white;">
-  <%= render "form", author: @author %>
+  <%= render partial:"form", author: @author, cached:true%>
   <div class="back">
   <%= link_to "Back", @author %>
   </div> 

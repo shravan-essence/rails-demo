@@ -7,7 +7,7 @@
 </head>
 <body style="background: white;">
   <h1>New Author...</h1>
-  <%= form_with model: author do |form| %>
+  <%= form_with model: @author do |form| %>
     <div>
       <%= form.label :name %><br>
       <%= form.text_field :name %>
