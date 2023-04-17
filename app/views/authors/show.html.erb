@@ -18,6 +18,10 @@
 		  <p>No weather information available.</p>
 		<% end %>
 	</div>
+
+	<div>
+		<p><%= image_tag(@author.avatar, size: "200" )%></p>
+	</div>
 	<%= link_to "Delete", author_path(@author), data: {turbo_method: :delete,
 	turbo_confirm: "Are you sure?"} %>
 </body>
