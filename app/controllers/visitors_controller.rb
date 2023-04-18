@@ -22,7 +22,6 @@ class VisitorsController < ApplicationController
   # POST /visitors or /visitors.json
   def create
     @visitor = Visitor.new(visitor_params)
-
     respond_to do |format|
       if @visitor.save
         format.html { redirect_to(@visitor, notice: "Visitor was successfully created.") }
@@ -69,6 +68,6 @@ class VisitorsController < ApplicationController
     end
 
     def send_email
-      VisitorMailer.welcome_email(@visitor).deliver_now
+      VisitorWorker.perform_sync(@visitor.name, @visitor.email)
     end
 end

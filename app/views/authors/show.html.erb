@@ -22,13 +22,13 @@
 	<div>
 		<p><%= image_tag(@author.avatar, size: "200" )%></p>
 	</div>
-	<% cache @author do %>
+<!-- 	<#% cache @author do %>
 		<h4>Cache data:</h4>
-		<p>Name:- <%= @author.name %></p>
-		<p>City:- <%= @author.city %></p>
+		<p>Name:- <%#= @author.name %></p>
+		<p>City:- <%#= @author.city %></p>
 		<br>
-		<p> <%= @author.inspect %></p>
-  <% end %>
+		<p> <%#= @author.inspect %></p>
+  <#% end %> -->
 	<%= link_to "Delete", author_path(@author), data: {turbo_method: :delete,
 	turbo_confirm: "Are you sure?"} %>
 </body>

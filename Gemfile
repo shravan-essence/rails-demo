@@ -39,7 +39,8 @@ gem 'redis', '~> 4.0'
 # gem "kredis"
 
 # Sidekiq gem for background job
-gem 'sidekiq' 
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

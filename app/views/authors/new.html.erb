@@ -7,6 +7,8 @@
 </head>
 <body style="background: white;">
   <%= render partial:"form", author: @author, cached:true%>
+  <%#= render partial: "authors/form",:locale=>[:en], :formats=>[:haml], :variants=>[], :handlers=>[:haml]%>
+  
   <div class="back">
   <%= link_to "Back", @author %>
   </div> 
