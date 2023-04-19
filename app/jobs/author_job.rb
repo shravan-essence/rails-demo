@@ -1,10 +1,11 @@
-class VisitorWorker
-  include Sidekiq::Worker
-  sidekiq_options queue: 'mailers'
+class AuthorJob < ApplicationJob
+  @queue = :default
+  # queue_as :default
 
-  def perform(name, email)
-    @name = name
-    @email = email
+  def perform(author)
+    # Do something later
+    @name = author.name
+    @email = author.city
     p 11111111111111111111
     p @name
     p @email

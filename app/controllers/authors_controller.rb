@@ -1,5 +1,6 @@
 require_dependency 'weather_service'
 class AuthorsController < ApplicationController
+  after_action :send_email, only: :create
   def index
     @authors = Author.all
   end
@@ -32,7 +33,14 @@ class AuthorsController < ApplicationController
   end
 
   private
+
   def author_params
     params.require(:author).permit(:name, :city, :avatar)
+  end
+
+  def send_email
+    Resque.enqueue(AuthorJob, @author)
+    #AuthorJob.perform_later(@author.name, @author.city)
+    #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
   end
 end

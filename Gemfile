@@ -40,7 +40,7 @@ gem 'redis', '~> 4.0'
 
 # Sidekiq gem for background job
 gem 'sidekiq'
-gem 'sinatra', github: 'sinatra/sinatra'
+gem 'sinatra'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -62,6 +62,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rubocop'
   gem 'gchart'
+  gem 'resque'
 end
 
 group :development do
