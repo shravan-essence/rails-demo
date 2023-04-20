@@ -20,6 +20,10 @@ class AuthorsController < ApplicationController
 
     @author = Author.new(author_params())
     if @author.save
+      cookies.encrypted[:name] = @author.name
+      cookies[:city] = @author.city
+      session[:name] = @author.name
+      session[:city] = @author.city
       redirect_to @author
     else
       render :new, status: 404
@@ -28,6 +32,10 @@ class AuthorsController < ApplicationController
 
   def destroy
     @author = Author.find(params[:id])
+    cookies.delete(:name)
+    cookies.delete(:city)
+    session.delete(:name)
+    session.delete(:city)
     @author.destroy
     redirect_to @author
   end
@@ -39,8 +47,8 @@ class AuthorsController < ApplicationController
   end
 
   def send_email
-    Resque.enqueue(AuthorJob, @author)
-    #AuthorJob.perform_later(@author.name, @author.city)
+    #Resque.enqueue(AuthorJob, @author)
+    #AuthorJob.perform_later(@author)
     #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
   end
 end

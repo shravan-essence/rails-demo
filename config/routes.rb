@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :students
   require "sidekiq/web"
   require 'resque/server'
   mount Sidekiq::Web => "/sidekiq"

@@ -41,7 +41,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.cache_store = :redis_cache_store, {url: 'redis://127.0.0.1:6379/0'}
+  config.cache_store = :redis_cache_store, {url: 'redis://127.0.0.1:6379/0' }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

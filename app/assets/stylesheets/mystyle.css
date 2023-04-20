@@ -7,13 +7,13 @@ ul {
 	padding: 0!important;
 }
 
-
 a{
 	text-decoration: none;
 	padding: 5px 10px;
+	margin: 5px;
 	border: 0 solid black;
 	background-color: skyblue;
-	border-radius: 3px;
+	border-radius: 2px;
 	color: white;
 }
 
@@ -24,6 +24,7 @@ a:hover {
 input[type=submit] {
 	text-decoration: none;
 	padding: 5px 10px;
+	margin: 20px 0;
 	border: 0 solid black;
 	background-color: skyblue;
 	border-radius: 3px;
@@ -36,4 +37,24 @@ div.back {
 
 div.description{
 	margin-left: 30px;
+}
+
+section.authentication {
+	float: right;
+}
+
+section.authentication div {
+	display: inline;
+}
+
+input[type=password] {
+	width: 50%;
+}
+
+input[type=email] {
+	width: 50%;
+}
+
+section.authentication p{
+	display: inline;
 }
