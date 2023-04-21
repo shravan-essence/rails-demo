@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
-  before_action :set_visitor, only: %i[ show edit update destroy ]
+  before_action :set_visitor, only: %i[show edit update destroy]
   after_action :send_email, only: :create
   # GET /visitors or /visitors.json
   def index
@@ -7,8 +7,7 @@ class VisitorsController < ApplicationController
   end
 
   # GET /visitors/1 or /visitors/1.json
-  def show
-  end
+  def show; end
 
   # GET /visitors/new
   def new
@@ -16,8 +15,7 @@ class VisitorsController < ApplicationController
   end
 
   # GET /visitors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /visitors or /visitors.json
   def create
@@ -57,18 +55,19 @@ class VisitorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_visitor
-      @visitor = Visitor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def visitor_params
-      params.require(:visitor).permit(:name, :email, :username)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_visitor
+    @visitor = Visitor.find(params[:id])
+  end
 
-    def send_email
-      VisitorWorker.perform_async(@visitor.name, @visitor.email)
-      #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
-    end
+  # Only allow a list of trusted parameters through.
+  def visitor_params
+    params.require(:visitor).permit(:name, :email, :username)
+  end
+
+  def send_email
+    VisitorWorker.perform_async(@visitor.name, @visitor.email)
+    # VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+  end
 end

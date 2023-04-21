@@ -5,10 +5,10 @@ class VisitorWorker
   def perform(name, email)
     @name = name
     @email = email
-    p 11111111111111111111
+    p 11_111_111_111_111_111_111
     p @name
     p @email
-    p 111111111111111111111                   
+    p 111_111_111_111_111_111_111
     if VisitorMailer.welcome_email(@name, @email).deliver_later
       puts "Mail Sent successfully"
     else

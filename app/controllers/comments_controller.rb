@@ -1,19 +1,19 @@
 class CommentsController < ApplicationController
   def create
-    @article = article_detail()
-    comment = @article.comments.create(comment_params())
+    @article = article_detail
+    comment = @article.comments.create(comment_params)
     redirect_to article_path(@article)
   end
 
   def edit
-    @article = article_detail()
+    @article = article_detail
     @comment = @article.comments.find(params[:id])
   end
   
   def update
-    @article = article_detail()
+    @article = article_detail
     comment = @article.comments.find(params[:id])
-    if comment.update(comment_params())
+    if comment.update(comment_params)
       redirect_to article_path(@article)
     else
       render :edit, status: 422
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @article = article_detail()
+    @article = article_detail
     @comment = @article.comments.find(params[:id])
     @comment.destroy
 

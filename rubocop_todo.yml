@@ -1,0 +1,2288 @@
+Inspecting 147 files
+C...C..CWCC.C..C.CC.WCC.C.CCCC.CCCCCCC.CC...CC......CC.........C..CC.....CC.C...CCCCCCCCCCCCCCCCCCCCCCCC..CWCCCWCWWC..C......C.....................
+
+Offenses:
+
+Gemfile:65:3: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem gchart should appear before rubocop.
+  gem 'gchart'
+  ^^^^^^^^^^^^
+app/controllers/api/v1/articles_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Api::V1::ArticlesController.
+class Api::V1::ArticlesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/api/v1/articles_controller.rb:1:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class Api::V1::ArticlesController < ApplicationController
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/api/v1/articles_controller.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	skip_before_action :verify_authenticity_token
+^
+app/controllers/api/v1/articles_controller.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	skip_before_action :verify_authenticity_token
+^
+app/controllers/api/v1/articles_controller.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+app/controllers/api/v1/articles_controller.rb:3:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/api/v1/articles_controller.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def index
+^
+app/controllers/api/v1/articles_controller.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def index
+^
+app/controllers/api/v1/articles_controller.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		@articles = Article.all
+^^
+app/controllers/api/v1/articles_controller.rb:5:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		@articles = Article.all
+ ^
+app/controllers/api/v1/articles_controller.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		render json: @articles
+^^
+app/controllers/api/v1/articles_controller.rb:7:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/api/v1/articles_controller.rb:9:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# def show
+^
+app/controllers/api/v1/articles_controller.rb:10:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 	begin
+^
+app/controllers/api/v1/articles_controller.rb:11:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 		@article = Article.find(params[:id])
+^
+app/controllers/api/v1/articles_controller.rb:12:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 		render json: @article
+^
+app/controllers/api/v1/articles_controller.rb:13:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 	rescue
+^
+app/controllers/api/v1/articles_controller.rb:14:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 		render json: "error", status: 404
+^
+app/controllers/api/v1/articles_controller.rb:15:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# 	end
+^
+app/controllers/api/v1/articles_controller.rb:16:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	# end
+^
+app/controllers/api/v1/articles_controller.rb:18:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def show
+^
+app/controllers/api/v1/articles_controller.rb:18:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def show
+^
+app/controllers/api/v1/articles_controller.rb:19:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		article = Article.find_by(id: params[:id])
+^^
+app/controllers/api/v1/articles_controller.rb:19:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		article = Article.find_by(id: params[:id])
+ ^
+app/controllers/api/v1/articles_controller.rb:20:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		if article.present?
+^^
+app/controllers/api/v1/articles_controller.rb:21:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: article
+^^^
+app/controllers/api/v1/articles_controller.rb:21:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: article
+  ^
+app/controllers/api/v1/articles_controller.rb:22:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		else
+^^
+app/controllers/api/v1/articles_controller.rb:23:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: { message: 'Record not Found..', status: 404 }
+^^^
+app/controllers/api/v1/articles_controller.rb:23:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: { message: 'Record not Found..', status: 404 }
+  ^
+app/controllers/api/v1/articles_controller.rb:24:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		end
+^^
+app/controllers/api/v1/articles_controller.rb:25:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/api/v1/articles_controller.rb:27:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def create
+^
+app/controllers/api/v1/articles_controller.rb:27:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def create
+^
+app/controllers/api/v1/articles_controller.rb:28:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		article = Article.new(article_params)
+^^
+app/controllers/api/v1/articles_controller.rb:28:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		article = Article.new(article_params)
+ ^
+app/controllers/api/v1/articles_controller.rb:29:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		if article.save
+^^
+app/controllers/api/v1/articles_controller.rb:30:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: {Record: article, message: "Record created.." }
+^^^
+app/controllers/api/v1/articles_controller.rb:30:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: {Record: article, message: "Record created.." }
+  ^
+app/controllers/api/v1/articles_controller.rb:30:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			render json: {Record: article, message: "Record created.." }
+                ^
+app/controllers/api/v1/articles_controller.rb:31:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		else
+^^
+app/controllers/api/v1/articles_controller.rb:32:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: { message: "Record not created.." }
+^^^
+app/controllers/api/v1/articles_controller.rb:32:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: { message: "Record not created.." }
+  ^
+app/controllers/api/v1/articles_controller.rb:33:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		end
+^^
+app/controllers/api/v1/articles_controller.rb:34:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/api/v1/articles_controller.rb:36:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def update
+^
+app/controllers/api/v1/articles_controller.rb:36:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def update
+^
+app/controllers/api/v1/articles_controller.rb:37:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		article = Article.find_by(id: params[:id])
+^^
+app/controllers/api/v1/articles_controller.rb:37:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		article = Article.find_by(id: params[:id])
+ ^
+app/controllers/api/v1/articles_controller.rb:38:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		if article.update(article_params)
+^^
+app/controllers/api/v1/articles_controller.rb:39:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: {message: "Record has been updated!!"}
+^^^
+app/controllers/api/v1/articles_controller.rb:39:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: {message: "Record has been updated!!"}
+  ^
+app/controllers/api/v1/articles_controller.rb:39:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			render json: {message: "Record has been updated!!"}
+                ^
+app/controllers/api/v1/articles_controller.rb:39:54: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			render json: {message: "Record has been updated!!"}
+                                                     ^
+app/controllers/api/v1/articles_controller.rb:40:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		else
+^^
+app/controllers/api/v1/articles_controller.rb:41:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: {message: "Record is not updated"}
+^^^
+app/controllers/api/v1/articles_controller.rb:41:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: {message: "Record is not updated"}
+  ^
+app/controllers/api/v1/articles_controller.rb:41:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			render json: {message: "Record is not updated"}
+                ^
+app/controllers/api/v1/articles_controller.rb:41:50: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			render json: {message: "Record is not updated"}
+                                                 ^
+app/controllers/api/v1/articles_controller.rb:42:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		end
+^^
+app/controllers/api/v1/articles_controller.rb:43:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/api/v1/articles_controller.rb:45:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def destroy
+^
+app/controllers/api/v1/articles_controller.rb:45:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def destroy
+^
+app/controllers/api/v1/articles_controller.rb:46:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		article = Article.find_by(id: params[:id])
+^^
+app/controllers/api/v1/articles_controller.rb:46:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		article = Article.find_by(id: params[:id])
+ ^
+app/controllers/api/v1/articles_controller.rb:47:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		if article
+^^
+app/controllers/api/v1/articles_controller.rb:48:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			article.destroy
+^^^
+app/controllers/api/v1/articles_controller.rb:48:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			article.destroy
+  ^
+app/controllers/api/v1/articles_controller.rb:49:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: {message: "Record has been deleted successfully"}
+^^^
+app/controllers/api/v1/articles_controller.rb:49:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			render json: {message: "Record has been deleted successfully"}
+                ^
+app/controllers/api/v1/articles_controller.rb:49:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			render json: {message: "Record has been deleted successfully"}
+                                                                ^
+app/controllers/api/v1/articles_controller.rb:50:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		else
+^^
+app/controllers/api/v1/articles_controller.rb:51:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			render json: { message: "Record is not found"}
+^^^
+app/controllers/api/v1/articles_controller.rb:51:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			render json: { message: "Record is not found"}
+  ^
+app/controllers/api/v1/articles_controller.rb:51:49: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			render json: { message: "Record is not found"}
+                                                ^
+app/controllers/api/v1/articles_controller.rb:52:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		end
+^^
+app/controllers/api/v1/articles_controller.rb:53:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/api/v1/articles_controller.rb:55:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	private
+^
+app/controllers/api/v1/articles_controller.rb:55:2: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+	private
+ ^^^^^^^
+app/controllers/api/v1/articles_controller.rb:55:2: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+	private
+ ^^^^^^^
+app/controllers/api/v1/articles_controller.rb:56:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def article_params
+^
+app/controllers/api/v1/articles_controller.rb:56:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def article_params
+^
+app/controllers/api/v1/articles_controller.rb:57:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		params.permit(:title, :body, :published, :id)
+^^
+app/controllers/api/v1/articles_controller.rb:57:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		params.permit(:title, :body, :published, :id)
+ ^
+app/controllers/api/v1/articles_controller.rb:58:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/controllers/authors_controller.rb:2:1: C: Style/Documentation: Missing top-level documentation comment for class AuthorsController.
+class AuthorsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authors_controller.rb:10:21: C: [Correctable] Layout/SpaceAroundOperators: Operator = should be surrounded by a single space.
+    weather_service =  WeatherService.new(@author.city)
+                    ^
+app/controllers/authors_controller.rb:10:22: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+    weather_service =  WeatherService.new(@author.city)
+                     ^
+app/controllers/authors_controller.rb:16:1: C: [Correctable] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
+app/controllers/authors_controller.rb:19:3: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [<5, 18, 2> 18.79/17]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/authors_controller.rb:20:1: C: [Correctable] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body beginning.
+app/controllers/authors_controller.rb:21:39: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    @author = Author.new(author_params())
+                                      ^^
+app/controllers/authors_controller.rb:50:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #Resque.enqueue(AuthorJob, @author)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authors_controller.rb:51:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #AuthorJob.perform_later(@author)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authors_controller.rb:52:5: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+    #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/comments_controller.rb:3:30: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    @article = article_detail()
+                             ^^
+app/controllers/comments_controller.rb:4:5: W: Lint/UselessAssignment: Useless assignment to variable - comment.
+    comment = @article.comments.create(comment_params())
+    ^^^^^^^
+app/controllers/comments_controller.rb:4:54: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    comment = @article.comments.create(comment_params())
+                                                     ^^
+app/controllers/comments_controller.rb:9:30: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    @article = article_detail()
+                             ^^
+app/controllers/comments_controller.rb:14:30: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    @article = article_detail()
+                             ^^
+app/controllers/comments_controller.rb:16:37: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    if comment.update(comment_params())
+                                    ^^
+app/controllers/comments_controller.rb:24:30: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    @article = article_detail()
+                             ^^
+app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
+class UsersController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:2:37: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_user, only: %i[ show edit update destroy ]
+                                    ^
+app/controllers/users_controller.rb:2:62: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_user, only: %i[ show edit update destroy ]
+                                                             ^
+app/controllers/users_controller.rb:10:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/users_controller.rb:19:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/controllers/users_controller.rb:60:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/users_controller.rb:62:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def set_user
+^^^^
+app/controllers/users_controller.rb:62:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def set_user ...
+    ^^^^^^^^^^^^
+app/controllers/users_controller.rb:67:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def user_params
+^^^^
+app/controllers/users_controller.rb:67:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def user_params ...
+    ^^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class VisitorsController.
+class VisitorsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:2:40: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_visitor, only: %i[ show edit update destroy ]
+                                       ^
+app/controllers/visitors_controller.rb:2:65: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_visitor, only: %i[ show edit update destroy ]
+                                                                ^
+app/controllers/visitors_controller.rb:10:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/visitors_controller.rb:19:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/controllers/visitors_controller.rb:59:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/visitors_controller.rb:61:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def set_visitor
+^^^^
+app/controllers/visitors_controller.rb:61:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def set_visitor ...
+    ^^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:66:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def visitor_params
+^^^^
+app/controllers/visitors_controller.rb:66:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def visitor_params ...
+    ^^^^^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:70:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def send_email
+^^^^
+app/controllers/visitors_controller.rb:70:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def send_email ...
+    ^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:72:7: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+      #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/api/v1/articles_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module Api::V1::ArticlesHelper.
+module Api::V1::ArticlesHelper
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/api/v1/articles_helper.rb:1:8: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+module Api::V1::ArticlesHelper
+       ^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/author_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module AuthorHelper.
+module AuthorHelper
+^^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module UsersHelper.
+module UsersHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/visitors_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module VisitorsHelper.
+module VisitorsHelper
+^^^^^^^^^^^^^^^^^^^^^
+app/jobs/application_job.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationJob.
+class ApplicationJob < ActiveJob::Base
+^^^^^^^^^^^^^^^^^^^^
+app/jobs/application_job.rb:9:16: W: [Correctable] Lint/UnusedMethodArgument: Unused method argument - args. If it's necessary, use _ or _args as an argument name to indicate that it won't be used. If it's unnecessary, remove it. You can also write as perform(*) if you want the method to accept any arguments but don't care about them.
+  def perform(*args)
+               ^^^^
+app/jobs/application_job.rb:13:43: C: [Correctable] Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
+    p "hello from HelloWorldJob #{Time.now().strftime('%F - %H:%M:%S.%L')}"
+                                          ^^
+app/jobs/author_job.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AuthorJob.
+class AuthorJob < ApplicationJob
+^^^^^^^^^^^^^^^
+app/jobs/author_job.rb:9:7: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+    p 11111111111111111111
+      ^^^^^^^^^^^^^^^^^^^^
+app/jobs/author_job.rb:12:7: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+    p 111111111111111111111                   
+      ^^^^^^^^^^^^^^^^^^^^^
+app/jobs/author_job.rb:12:28: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    p 111111111111111111111                   
+                           ^^^^^^^^^^^^^^^^^^^
+app/jobs/sleeper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Sleeper.
+class Sleeper
+^^^^^^^^^^^^^
+app/jobs/sleeper.rb:7:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/mailers/visitor_mailer.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class VisitorMailer.
+class VisitorMailer < ApplicationMailer
+^^^^^^^^^^^^^^^^^^^
+app/mailers/visitor_mailer.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	default from: 'chaudharysharwan2000@gmail.com'
+^
+app/mailers/visitor_mailer.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	default from: 'chaudharysharwan2000@gmail.com'
+^
+app/mailers/visitor_mailer.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+app/mailers/visitor_mailer.rb:3:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/mailers/visitor_mailer.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	def welcome_email(name, email)
+^
+app/mailers/visitor_mailer.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def welcome_email(name, email)
+^
+app/mailers/visitor_mailer.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		@visitor_name = name
+^^
+app/mailers/visitor_mailer.rb:5:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		@visitor_name = name
+ ^
+app/mailers/visitor_mailer.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		@visitor_email = email
+^^
+app/mailers/visitor_mailer.rb:7:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		p 222222222222222222
+^^
+app/mailers/visitor_mailer.rb:7:5: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+		p 222222222222222222
+    ^^^^^^^^^^^^^^^^^^
+app/mailers/visitor_mailer.rb:8:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		p @visitor_email
+^^
+app/mailers/visitor_mailer.rb:9:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		p 2222222222222222222
+^^
+app/mailers/visitor_mailer.rb:9:5: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+		p 2222222222222222222
+    ^^^^^^^^^^^^^^^^^^^
+app/mailers/visitor_mailer.rb:10:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		mail(to: @visitor_email, subject: 'Welcome to My Awesome Site')
+^^
+app/mailers/visitor_mailer.rb:11:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/models/appointment.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Appointment.
+class Appointment < ApplicationRecord
+^^^^^^^^^^^^^^^^^
+app/models/article.rb:3:22: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+	has_many :comments, :dependent => :destroy
+                     ^^^^^^^^^^^^^
+app/models/article.rb:5:37: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+	has_many :comment, as: :commentable 
+                                    ^
+app/models/article.rb:7:22: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+	scope :published, ->{where(published: true)}
+                     ^
+app/models/article.rb:7:23: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside {.
+	scope :published, ->{where(published: true)}
+                      ^
+app/models/article.rb:7:45: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside }.
+	scope :published, ->{where(published: true)}
+                                            ^
+app/models/author.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Author.
+class Author < ApplicationRecord
+^^^^^^^^^^^^
+app/models/author.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_one_attached :avatar
+^
+app/models/author.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_one_attached :avatar
+^
+app/models/book.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Book.
+class Book < ApplicationRecord
+^^^^^^^^^^
+app/models/book.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_many :authors
+^
+app/models/book.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_many :authors
+^
+app/models/book.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_many :articles, through: :authors
+^
+app/models/book.rb:3:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_many :articles, through: :authors
+^
+app/models/book.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_many :comments, as: :commentable
+^
+app/models/book.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_many :comments, as: :commentable
+^
+app/models/concerns/article_validation.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ArticleValidation.
+module ArticleValidation
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/concerns/article_validation.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	extend ActiveSupport::Concern
+^
+app/models/concerns/article_validation.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	extend ActiveSupport::Concern
+^
+app/models/concerns/article_validation.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	included do
+^
+app/models/concerns/article_validation.rb:3:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	included do
+^
+app/models/concerns/article_validation.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		validates :title, presence: true
+^^
+app/models/concerns/article_validation.rb:4:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		validates :title, presence: true
+ ^
+app/models/concerns/article_validation.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		validates :body, presence: true, length: {minimum: 10}
+^^
+app/models/concerns/article_validation.rb:5:44: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+		validates :body, presence: true, length: {minimum: 10}
+                                           ^
+app/models/concerns/article_validation.rb:5:56: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+		validates :body, presence: true, length: {minimum: 10}
+                                                       ^
+app/models/concerns/article_validation.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/models/concerns/article_validation.rb:7:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/models/concerns/comment_validation.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module CommentValidation.
+module CommentValidation
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/concerns/comment_validation.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	extend ActiveSupport::Concern
+^
+app/models/concerns/comment_validation.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	extend ActiveSupport::Concern
+^
+app/models/concerns/comment_validation.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	included do
+^
+app/models/concerns/comment_validation.rb:3:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	included do
+^
+app/models/concerns/comment_validation.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		validates :commenter, presence: true
+^^
+app/models/concerns/comment_validation.rb:4:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		validates :commenter, presence: true
+ ^
+app/models/concerns/comment_validation.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+  	validates :body, presence: true, length: {minimum: 10}
+^^^
+app/models/concerns/comment_validation.rb:5:4: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  	validates :body, presence: true, length: {minimum: 10}
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/concerns/comment_validation.rb:5:45: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+  	validates :body, presence: true, length: {minimum: 10}
+                                            ^
+app/models/concerns/comment_validation.rb:5:57: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+  	validates :body, presence: true, length: {minimum: 10}
+                                                        ^
+app/models/concerns/comment_validation.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+app/models/concerns/comment_validation.rb:7:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/models/customer.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Customer.
+class Customer < ApplicationRecord
+^^^^^^^^^^^^^^
+app/models/customer.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_and_belongs_to_many :groceries
+^
+app/models/customer.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_and_belongs_to_many :groceries
+^
+app/models/grocery.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Grocery.
+class Grocery < ApplicationRecord
+^^^^^^^^^^^^^
+app/models/grocery.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	has_and_belongs_to_many :customers
+^
+app/models/grocery.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	has_and_belongs_to_many :customers
+^
+app/models/like.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Like.
+class Like < ApplicationRecord
+^^^^^^^^^^
+app/models/like.rb:2:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	belongs_to :comment
+^
+app/models/like.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	belongs_to :comment
+^
+app/models/like.rb:3:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	belongs_to :article
+^
+app/models/like.rb:3:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	belongs_to :article
+^
+app/models/like.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	delegate :author, to: :article
+^
+app/models/like.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	delegate :author, to: :article
+^
+app/models/patient.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Patient.
+class Patient < ApplicationRecord
+^^^^^^^^^^^^^
+app/models/physician.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Physician.
+class Physician < ApplicationRecord
+^^^^^^^^^^^^^^^
+app/models/profile.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Profile.
+class Profile < ApplicationRecord
+^^^^^^^^^^^^^
+app/models/student.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class Student.
+class Student < ApplicationRecord
+^^^^^^^^^^^^^
+app/services/weather_service.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class WeatherService.
+class WeatherService
+^^^^^^^^^^^^^^^^^^^^
+app/services/weather_service.rb:29:40: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+      icon_url: "https:#{@weather_data["current"]["condition"]["icon"]}"
+                                       ^^^^^^^^^
+app/services/weather_service.rb:29:51: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+      icon_url: "https:#{@weather_data["current"]["condition"]["icon"]}"
+                                                  ^^^^^^^^^^^
+app/services/weather_service.rb:29:64: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+      icon_url: "https:#{@weather_data["current"]["condition"]["icon"]}"
+                                                               ^^^^^^
+app/services/weather_service.rb:32:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/sidekiq/hard_worker_job.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class HardWorkerJob.
+class HardWorkerJob
+^^^^^^^^^^^^^^^^^^^
+app/worker/author_worker.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AuthorWorker.
+class AuthorWorker
+^^^^^^^^^^^^^^^^^^
+app/worker/author_worker.rb:5:15: C: Naming/MethodParameterName: Only use lowercase characters for method parameter.
+  def perform(start_Date, end_date)
+              ^^^^^^^^^^
+app/worker/author_worker.rb:5:15: C: Naming/VariableName: Use snake_case for variable names.
+  def perform(start_Date, end_date)
+              ^^^^^^^^^^
+app/worker/author_worker.rb:6:49: C: Naming/VariableName: Use snake_case for variable names.
+    puts "Sidekiq worker creating author from #{start_Date} to #{end_date}"
+                                                ^^^^^^^^^^
+app/worker/author_worker.rb:9:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/worker/visitor_worker.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class VisitorWorker.
+class VisitorWorker
+^^^^^^^^^^^^^^^^^^^
+app/worker/visitor_worker.rb:8:7: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+    p 11111111111111111111
+      ^^^^^^^^^^^^^^^^^^^^
+app/worker/visitor_worker.rb:11:7: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+    p 111111111111111111111                   
+      ^^^^^^^^^^^^^^^^^^^^^
+app/worker/visitor_worker.rb:11:28: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    p 111111111111111111111                   
+                           ^^^^^^^^^^^^^^^^^^^
+app/worker/visitor_worker.rb:18:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+config/environments/development.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [36/25]
+Rails.application.configure do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/development.rb:44:44: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+  config.cache_store = :redis_cache_store, {url: 'redis://127.0.0.1:6379/0' }
+                                           ^
+config/importmap.rb:12:55: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+pin "bootstrap", to: 'bootstrap.min.js', preload: true
+                                                      
+config/initializers/assets.rb:13:47: C: [Correctable] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/assets.rb:13:77: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
+                                                                            
+config/initializers/resque.rb:1:59: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+Resque.logger.formatter = Resque::VeryVerboseFormatter.new
+                                                          
+config/initializers/sidekiq.rb:1:28: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+Sidekiq.strict_args!(false)
+                           
+config/routes.rb:8:1: C: [Correctable] Layout/EmptyLines: Extra blank line detected.
+config/routes.rb:33:1: C: [Correctable] Layout/EmptyLines: Extra blank line detected.
+config/routes.rb:33:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+db/migrate/20230404090512_create_user.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateUser.
+class CreateUser < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^
+db/migrate/20230404100816_add_details_to_books.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddDetailsToBooks.
+class AddDetailsToBooks < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230404103410_change_column_name_to_books.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ChangeColumnNameToBooks.
+class ChangeColumnNameToBooks < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230404104610_add_book_ref_to_article.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddBookRefToArticle.
+class AddBookRefToArticle < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230404105803_remove_price_from_books.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RemovePriceFromBooks.
+class RemovePriceFromBooks < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230405073103_add_column_to_articles.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddColumnToArticles.
+class AddColumnToArticles < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230406071009_create_likes.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateLikes.
+class CreateLikes < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^
+db/migrate/20230407084059_create_customers.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateCustomers.
+class CreateCustomers < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230407084212_create_groceries.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateGroceries.
+class CreateGroceries < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230407085503_create_customers_groceries_join_table.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateCustomersGroceriesJoinTable.
+class CreateCustomersGroceriesJoinTable < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230411075134_add_commentable_to_comment.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddCommentableToComment.
+class AddCommentableToComment < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413045534_create_test1s.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateTest1s.
+class CreateTest1s < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^
+db/migrate/20230413045534_create_test1s.rb:3:26: C: [Correctable] Style/SymbolProc: Pass &:timestamps as an argument to create_table instead of a block.
+    create_table :test1s do |t| ...
+                         ^^^^^^
+db/migrate/20230413045534_create_test1s.rb:4:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+db/migrate/20230413045653_add_columns_to_test1.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddColumnsToTest1.
+class AddColumnsToTest1 < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413105131_create_authors.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateAuthors.
+class CreateAuthors < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413113045_create_physicians.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreatePhysicians.
+class CreatePhysicians < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413113111_create_patients.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreatePatients.
+class CreatePatients < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413113154_create_appointments.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateAppointments.
+class CreateAppointments < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230413113240_add_ref_to_appointment.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddRefToAppointment.
+class AddRefToAppointment < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230414110056_create_visitors.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateVisitors.
+class CreateVisitors < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230414131107_create_profiles.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateProfiles.
+class CreateProfiles < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230414131107_create_profiles.rb:3:28: C: [Correctable] Style/SymbolProc: Pass &:timestamps as an argument to create_table instead of a block.
+    create_table :profiles do |t| ...
+                           ^^^^^^
+db/migrate/20230414131107_create_profiles.rb:4:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+db/migrate/20230414131344_add_columns_to_profile.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddColumnsToProfile.
+class AddColumnsToProfile < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [<5, 29, 4> 29.7/17]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/MethodLength: Method has too many lines. [34/13]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:22:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+               ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:22:21: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+                    ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:36:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: :index_active_storage_attachments_uniqueness, unique: true
+               ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:36:58: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: :index_active_storage_attachments_uniqueness, unique: true
+                                                         ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:44:16: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :blob_id, :variation_digest ], name: :index_active_storage_variant_records_uniqueness, unique: true
+               ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:44:44: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :blob_id, :variation_digest ], name: :index_active_storage_variant_records_uniqueness, unique: true
+                                           ^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:49:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:50:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def primary_and_foreign_key_types
+^^^^
+db/migrate/20230414132316_create_active_storage_tables.active_storage.rb:50:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def primary_and_foreign_key_types ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230420101907_devise_create_students.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class DeviseCreateStudents.
+class DeviseCreateStudents < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20230420101907_devise_create_students.rb:35:1: C: [Correctable] Layout/EmptyLines: Extra blank line detected.
+db/schema.rb:13:1: C: Metrics/BlockLength: Block has too many lines. [145/25]
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_101907) do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:21:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:39:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:86:13: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:5:1: C: Metrics/AbcSize: Assignment Branch Condition size for markdown is too high. [<12, 14, 7> 19.72/17]
+def markdown(s) ...
+^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:5:1: C: Metrics/MethodLength: Method has too many lines. [15/13]
+def markdown(s) ...
+^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:5:14: C: Naming/MethodParameterName: Method parameter must be at least 3 characters long.
+def markdown(s)
+             ^
+redis-6.0.3/src/modules/gendoc.rb:6:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    s = s.gsub(/\*\/$/,"")
+^^^^
+redis-6.0.3/src/modules/gendoc.rb:6:16: C: [Correctable] Style/RegexpLiteral: Use %r around regular expression.
+    s = s.gsub(/\*\/$/,"")
+               ^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:6:23: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    s = s.gsub(/\*\/$/,"")
+                      ^
+redis-6.0.3/src/modules/gendoc.rb:7:28: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    s = s.gsub(/^ \* {0,1}/,"")
+                           ^
+redis-6.0.3/src/modules/gendoc.rb:8:16: C: [Correctable] Style/RegexpLiteral: Use %r around regular expression.
+    s = s.gsub(/^\/\* /,"")
+               ^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:8:24: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    s = s.gsub(/^\/\* /,"")
+                       ^
+redis-6.0.3/src/modules/gendoc.rb:12:15: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    lines.each{|l|
+              ^
+redis-6.0.3/src/modules/gendoc.rb:12:15: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    lines.each{|l|
+              ^^
+redis-6.0.3/src/modules/gendoc.rb:12:15: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    lines.each{|l|
+              ^
+redis-6.0.3/src/modules/gendoc.rb:13:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if l[0] != ' '
+    ^^^^
+redis-6.0.3/src/modules/gendoc.rb:14:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            l = l.gsub(/RM_[A-z()]+/){|x| "`#{x}`"}
+        ^^^^
+redis-6.0.3/src/modules/gendoc.rb:14:38: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            l = l.gsub(/RM_[A-z()]+/){|x| "`#{x}`"}
+                                     ^
+redis-6.0.3/src/modules/gendoc.rb:14:38: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            l = l.gsub(/RM_[A-z()]+/){|x| "`#{x}`"}
+                                     ^^
+redis-6.0.3/src/modules/gendoc.rb:14:51: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside }.
+            l = l.gsub(/RM_[A-z()]+/){|x| "`#{x}`"}
+                                                  ^
+redis-6.0.3/src/modules/gendoc.rb:15:47: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            l = l.gsub(/RedisModule_[A-z()]+/){|x| "`#{x}`"}
+                                              ^
+redis-6.0.3/src/modules/gendoc.rb:15:47: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            l = l.gsub(/RedisModule_[A-z()]+/){|x| "`#{x}`"}
+                                              ^^
+redis-6.0.3/src/modules/gendoc.rb:15:60: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside }.
+            l = l.gsub(/RedisModule_[A-z()]+/){|x| "`#{x}`"}
+                                                           ^
+redis-6.0.3/src/modules/gendoc.rb:16:45: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            l = l.gsub(/REDISMODULE_[A-z]+/){|x| "`#{x}`"}
+                                            ^
+redis-6.0.3/src/modules/gendoc.rb:16:45: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            l = l.gsub(/REDISMODULE_[A-z]+/){|x| "`#{x}`"}
+                                            ^^
+redis-6.0.3/src/modules/gendoc.rb:16:58: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside }.
+            l = l.gsub(/REDISMODULE_[A-z]+/){|x| "`#{x}`"}
+                                                         ^
+redis-6.0.3/src/modules/gendoc.rb:20:5: C: [Correctable] Style/RedundantReturn: Redundant return detected.
+    return newlines.join("\n")
+    ^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:25:1: C: Metrics/AbcSize: Assignment Branch Condition size for docufy is too high. [<9, 19, 2> 21.12/17]
+def docufy(src,i) ...
+^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:25:1: C: Metrics/MethodLength: Method has too many lines. [15/13]
+def docufy(src,i) ...
+^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:25:15: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def docufy(src,i)
+              ^
+redis-6.0.3/src/modules/gendoc.rb:25:16: C: Naming/MethodParameterName: Method parameter must be at least 3 characters long.
+def docufy(src,i)
+               ^
+redis-6.0.3/src/modules/gendoc.rb:26:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    m = /RM_[A-z0-9]+/.match(src[i])
+^^^^
+redis-6.0.3/src/modules/gendoc.rb:28:26: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    name = name.sub("RM_","RedisModule_")
+                         ^
+redis-6.0.3/src/modules/gendoc.rb:29:13: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+    proto = src[i].sub("{","").strip+";\n"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:29:27: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    proto = src[i].sub("{","").strip+";\n"
+                          ^
+redis-6.0.3/src/modules/gendoc.rb:29:37: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+    proto = src[i].sub("{","").strip+";\n"
+                                    ^
+redis-6.0.3/src/modules/gendoc.rb:30:28: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    proto = proto.sub("RM_","RedisModule_")
+                           ^
+redis-6.0.3/src/modules/gendoc.rb:34:5: C: [Correctable] Style/InfiniteLoop: Use Kernel#loop for infinite loops.
+    while true
+    ^^^^^
+redis-6.0.3/src/modules/gendoc.rb:35:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        i = i-1
+    ^^^^
+redis-6.0.3/src/modules/gendoc.rb:35:9: C: [Correctable] Style/SelfAssignment: Use self-assignment shorthand -=.
+        i = i-1
+        ^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:35:14: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+        i = i-1
+             ^
+redis-6.0.3/src/modules/gendoc.rb:36:25: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+        comment = src[i]+comment
+                        ^
+redis-6.0.3/src/modules/gendoc.rb:37:28: C: [Correctable] Style/RegexpLiteral: Use %r around regular expression.
+        break if src[i] =~ /\/\*/
+                           ^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:40:10: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+    puts comment+"\n\n"
+         ^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:40:17: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+    puts comment+"\n\n"
+                ^
+redis-6.0.3/src/modules/gendoc.rb:45:20: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+src.each_with_index{|line,i|
+                   ^
+redis-6.0.3/src/modules/gendoc.rb:45:20: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+src.each_with_index{|line,i|
+                   ^^
+redis-6.0.3/src/modules/gendoc.rb:45:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+src.each_with_index{|line,i|
+                   ^
+redis-6.0.3/src/modules/gendoc.rb:45:26: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+src.each_with_index{|line,i|
+                         ^
+redis-6.0.3/src/modules/gendoc.rb:46:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    if line =~ /RM_/ && line[0] != ' ' && line[0] != '#' && line[0] != '/'
+^^^^
+redis-6.0.3/src/modules/gendoc.rb:46:5: C: [Correctable] Style/Next: Use next to skip iteration.
+    if line =~ /RM_/ && line[0] != ' ' && line[0] != '#' && line[0] != '/'
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:47:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if src[i-1] =~ /\*\//
+    ^^^^
+redis-6.0.3/src/modules/gendoc.rb:47:9: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+        if src[i-1] =~ /\*\//
+        ^^
+redis-6.0.3/src/modules/gendoc.rb:47:9: C: [Correctable] Style/SoleNestedConditional: Consider merging nested conditions into outer if conditions.
+        if src[i-1] =~ /\*\//
+        ^^
+redis-6.0.3/src/modules/gendoc.rb:47:17: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+        if src[i-1] =~ /\*\//
+                ^
+redis-6.0.3/src/modules/gendoc.rb:47:24: C: [Correctable] Style/RegexpLiteral: Use %r around regular expression.
+        if src[i-1] =~ /\*\//
+                       ^^^^^^
+redis-6.0.3/src/modules/gendoc.rb:48:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            docufy(src,i)
+        ^^^^
+redis-6.0.3/src/modules/gendoc.rb:48:23: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            docufy(src,i)
+                      ^
+redis-6.0.3/src/redis-trib.rb:3:1: C: Metrics/MethodLength: Method has too many lines. [15/13]
+def colorized(str, color) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    return str if !(ENV['TERM'] || '')["xterm"]
+^^^^
+redis-6.0.3/src/redis-trib.rb:4:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return str if !(ENV['TERM'] || '')["xterm"]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:4:5: C: [Correctable] Style/NegatedIf: Favor unless over if for negative conditions.
+    return str if !(ENV['TERM'] || '')["xterm"]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:6:9: C: [Correctable] Layout/FirstHashElementIndentation: Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.
+        white: 29,
+        ^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:17:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return str if !color_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:17:5: C: [Correctable] Style/NegatedIf: Favor unless over if for negative conditions.
+    return str if !color_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:21:1: C: Style/Documentation: Missing top-level documentation comment for class String.
+class String
+^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:22:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+redis-6.0.3/src/redis-trib.rb:23:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    %w(white bold black red green yellow blue magenta cyan gray).each{|color|
+^^^^
+redis-6.0.3/src/redis-trib.rb:23:5: C: [Correctable] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+    %w(white bold black red green yellow blue magenta cyan gray).each{|color|
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:23:70: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    %w(white bold black red green yellow blue magenta cyan gray).each{|color|
+                                                                     ^
+redis-6.0.3/src/redis-trib.rb:23:70: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    %w(white bold black red green yellow blue magenta cyan gray).each{|color|
+                                                                     ^^
+redis-6.0.3/src/redis-trib.rb:23:70: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    %w(white bold black red green yellow blue magenta cyan gray).each{|color|
+                                                                     ^
+redis-6.0.3/src/redis-trib.rb:24:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        color = :"#{color}"
+    ^^^^
+redis-6.0.3/src/redis-trib.rb:25:29: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+        define_method(color){
+                            ^
+redis-6.0.3/src/redis-trib.rb:25:29: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        define_method(color){
+                            ^
+redis-6.0.3/src/redis-trib.rb:26:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            colorized(self, color)
+        ^^^^
+redis-6.0.3/src/redis-trib.rb:29:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+redis-6.0.3/src/redis-trib.rb:32:12: C: [Correctable] Style/MutableConstant: Freeze mutable objects assigned to constants.
+COMMANDS = %w(create check info fix reshard rebalance add-node  ...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:32:12: C: [Correctable] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+COMMANDS = %w(create check info fix reshard rebalance add-node  ...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:32:63: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+COMMANDS = %w(create check info fix reshard rebalance add-node 
+                                                              ^
+redis-6.0.3/src/redis-trib.rb:35:16: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+ALLOWED_OPTIONS={
+               ^
+redis-6.0.3/src/redis-trib.rb:35:17: C: [Correctable] Style/MutableConstant: Freeze mutable objects assigned to constants.
+ALLOWED_OPTIONS={ ...
+                ^
+redis-6.0.3/src/redis-trib.rb:36:5: C: [Correctable] Layout/FirstHashElementIndentation: Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.
+    "create" => {"replicas" => true},
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:36:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "create" => {"replicas" => true},
+                ^
+redis-6.0.3/src/redis-trib.rb:36:36: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "create" => {"replicas" => true},
+                                   ^
+redis-6.0.3/src/redis-trib.rb:37:19: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "add-node" => {"slave" => false, "master-id" => true},
+                  ^
+redis-6.0.3/src/redis-trib.rb:37:57: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "add-node" => {"slave" => false, "master-id" => true},
+                                                        ^
+redis-6.0.3/src/redis-trib.rb:38:17: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "import" => {"from" => :required, "copy" => false, "replace" => false},
+                ^
+redis-6.0.3/src/redis-trib.rb:38:74: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "import" => {"from" => :required, "copy" => false, "replace" => false},
+                                                                         ^
+redis-6.0.3/src/redis-trib.rb:39:18: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "reshard" => {"from" => true, "to" => true, "slots" => true, "yes" => false, "timeout" => true, "pipeline" => true},
+                 ^
+redis-6.0.3/src/redis-trib.rb:39:119: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "reshard" => {"from" => true, "to" => true, "slots" => true, "yes" => false, "timeout" => true, "pipeline" => true},
+                                                                                                                      ^
+redis-6.0.3/src/redis-trib.rb:40:20: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "rebalance" => {"weight" => [], "auto-weights" => false, "use-empty-masters" => false, "timeout" => true, "simulate" => false, "pipeline" => true, "threshold" => true},
+                   ^
+redis-6.0.3/src/redis-trib.rb:40:171: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "rebalance" => {"weight" => [], "auto-weights" => false, "use-empty-masters" => false, "timeout" => true, "simulate" => false, "pipeline" => true, "threshold" => true},
+                                                                                                                                                                          ^
+redis-6.0.3/src/redis-trib.rb:41:14: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    "fix" => {"timeout" => 0},
+             ^
+redis-6.0.3/src/redis-trib.rb:41:29: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    "fix" => {"timeout" => 0},
+                            ^
+redis-6.0.3/src/redis-trib.rb:41:30: C: [Correctable] Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+    "fix" => {"timeout" => 0},
+                             ^
+redis-6.0.3/src/redis-trib.rb:44:1: C: Metrics/AbcSize: Assignment Branch Condition size for parse_options is too high. [<11, 22, 20> 31.7/17]
+def parse_options(cmd) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:44:1: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for parse_options is too high. [11/9]
+def parse_options(cmd) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:44:1: C: Metrics/MethodLength: Method has too many lines. [33/13]
+def parse_options(cmd) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:44:1: C: Metrics/PerceivedComplexity: Perceived complexity for parse_options is too high. [14/9]
+def parse_options(cmd) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:45:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    cmd = cmd.downcase
+^^^^
+redis-6.0.3/src/redis-trib.rb:46:5: W: Lint/UselessAssignment: Useless assignment to variable - idx.
+    idx = 0
+    ^^^
+redis-6.0.3/src/redis-trib.rb:50:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if arg[0..1] == "--"
+    ^^^^
+redis-6.0.3/src/redis-trib.rb:51:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            option = arg[2..-1]
+        ^^^^
+redis-6.0.3/src/redis-trib.rb:51:26: C: [Correctable] Style/SlicingWithRange: Prefer ary[n..] over ary[n..-1].
+            option = arg[2..-1]
+                         ^^^^^
+redis-6.0.3/src/redis-trib.rb:55:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                options['verbose'] = true
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:58:37: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+            if ALLOWED_OPTIONS[cmd] == nil || 
+                                    ^^
+redis-6.0.3/src/redis-trib.rb:58:46: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+            if ALLOWED_OPTIONS[cmd] == nil || 
+                                             ^
+redis-6.0.3/src/redis-trib.rb:59:45: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+               ALLOWED_OPTIONS[cmd][option] == nil
+                                            ^^
+redis-6.0.3/src/redis-trib.rb:60:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                next
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:61:13: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+            end
+            ^^^
+redis-6.0.3/src/redis-trib.rb:63:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                value = ARGV.shift
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:64:17: C: Metrics/BlockNesting: Avoid more than 3 levels of block nesting.
+                next if !value
+                ^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:64:17: C: [Correctable] Style/NegatedIf: Favor unless over if for negative conditions.
+                next if !value
+                ^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:66:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                value = true
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:72:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                options[option] = [] if !options[option]
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:72:17: C: Metrics/BlockNesting: Avoid more than 3 levels of block nesting.
+                options[option] = [] if !options[option]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:72:17: C: [Correctable] Style/NegatedIf: Favor unless over if for negative conditions.
+                options[option] = [] if !options[option]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:75:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                options[option] = value
+            ^^^^
+redis-6.0.3/src/redis-trib.rb:78:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            next if arg[0,1] == '-'
+        ^^^^
+redis-6.0.3/src/redis-trib.rb:78:13: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+            next if arg[0,1] == '-'
+            ^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:78:26: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            next if arg[0,1] == '-'
+                         ^
+redis-6.0.3/src/redis-trib.rb:83:5: C: [Correctable] Style/RedundantReturn: Redundant return detected. To return multiple values, use an array.
+    return options,args
+    ^^^^^^
+redis-6.0.3/src/redis-trib.rb:83:19: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    return options,args
+                  ^
+redis-6.0.3/src/redis-trib.rb:86:1: C: Metrics/MethodLength: Method has too many lines. [15/13]
+def command_example(cmd, args, opts) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:87:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    cmd = "redis-cli --cluster #{cmd}"
+^^^^
+redis-6.0.3/src/redis-trib.rb:88:14: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    args.each{|a| 
+             ^
+redis-6.0.3/src/redis-trib.rb:88:14: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    args.each{|a| 
+             ^^
+redis-6.0.3/src/redis-trib.rb:88:14: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    args.each{|a| 
+             ^
+redis-6.0.3/src/redis-trib.rb:88:18: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    args.each{|a| 
+                 ^
+redis-6.0.3/src/redis-trib.rb:89:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        a = a.to_s
+    ^^^^
+redis-6.0.3/src/redis-trib.rb:93:14: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    opts.each{|opt, val|
+             ^
+redis-6.0.3/src/redis-trib.rb:93:14: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    opts.each{|opt, val|
+             ^^
+redis-6.0.3/src/redis-trib.rb:93:14: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    opts.each{|opt, val|
+             ^
+redis-6.0.3/src/redis-trib.rb:94:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        opt = " --cluster-#{opt.downcase}"
+    ^^^^
+redis-6.0.3/src/redis-trib.rb:96:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            val = val.join(' ') if val.is_a? Array
+        ^^^^
+redis-6.0.3/src/redis-trib.rb:104:1: C: Style/GlobalVars: Do not introduce global variables.
+$command = ARGV.shift
+^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:105:1: C: Style/GlobalVars: Do not introduce global variables.
+$opts, $args = parse_options($command) if $command
+^^^^^
+redis-6.0.3/src/redis-trib.rb:105:8: C: Style/GlobalVars: Do not introduce global variables.
+$opts, $args = parse_options($command) if $command
+       ^^^^^
+redis-6.0.3/src/redis-trib.rb:105:30: C: Style/GlobalVars: Do not introduce global variables.
+$opts, $args = parse_options($command) if $command
+                             ^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:105:43: C: Style/GlobalVars: Do not introduce global variables.
+$opts, $args = parse_options($command) if $command
+                                          ^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:110:61: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+puts "All commands and features belonging to redis-trib.rb "+
+                                                            ^
+redis-6.0.3/src/redis-trib.rb:110:61: C: [Correctable] Style/LineEndConcatenation: Use \ instead of + or << to concatenate those strings.
+puts "All commands and features belonging to redis-trib.rb "+
+                                                            ^
+redis-6.0.3/src/redis-trib.rb:119:1: C: [Correctable] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
+if $command ...
+^^^^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:119:4: C: Style/GlobalVars: Do not introduce global variables.
+if $command
+   ^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:120:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    example = command_example $command, $args, $opts
+^^^^
+redis-6.0.3/src/redis-trib.rb:120:31: C: Style/GlobalVars: Do not introduce global variables.
+    example = command_example $command, $args, $opts
+                              ^^^^^^^^
+redis-6.0.3/src/redis-trib.rb:120:41: C: Style/GlobalVars: Do not introduce global variables.
+    example = command_example $command, $args, $opts
+                                        ^^^^^
+redis-6.0.3/src/redis-trib.rb:120:48: C: Style/GlobalVars: Do not introduce global variables.
+    example = command_example $command, $args, $opts
+                                               ^^^^^
+redis-6.0.3/src/redis-trib.rb:122:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    example = "redis-cli --cluster info 127.0.0.1:7000"
+^^^^
+redis-6.0.3/utils/generate-command-help.rb:3:10: C: [Correctable] Style/WordArray: Use %w or %W for an array of words.
+GROUPS = [ ...
+         ^
+redis-6.0.3/utils/generate-command-help.rb:22:35: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  GROUPS.each_with_index.map do |n,i|
+                                  ^
+redis-6.0.3/utils/generate-command-help.rb:23:7: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    [n,i]
+      ^
+redis-6.0.3/utils/generate-command-help.rb:27:14: C: [Correctable] Style/MethodDefParentheses: Use def with parentheses when there are parameters.
+def argument arg
+             ^^^
+redis-6.0.3/utils/generate-command-help.rb:29:34: C: [Correctable] Style/YodaCondition: Reverse the order of the operands "enum" == arg["type"].
+  name = arg["enum"].join "|" if "enum" == arg["type"]
+                                 ^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:30:10: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+  name = arg["command"] + " " + name if arg["command"]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:31:3: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+  if arg["multiple"]
+  ^^
+redis-6.0.3/utils/generate-command-help.rb:34:3: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+  if arg["optional"]
+  ^^
+redis-6.0.3/utils/generate-command-help.rb:40:15: C: [Correctable] Style/MethodDefParentheses: Use def with parentheses when there are parameters.
+def arguments command
+              ^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:41:3: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+  return "-" unless command["arguments"]
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:47:1: C: Metrics/AbcSize: Assignment Branch Condition size for commands is too high. [<5, 16, 3> 17.03/17]
+def commands ...
+^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:47:1: C: Metrics/MethodLength: Method has too many lines. [15/13]
+def commands ...
+^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:70:22: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+  end.join(",\n    ");
+                     ^
+redis-6.0.3/utils/generate-command-help.rb:73:1: C: Metrics/AbcSize: Assignment Branch Condition size for generate_commands is too high. [<6, 18, 3> 19.21/17]
+def generate_commands ...
+^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:73:1: C: Metrics/MethodLength: Method has too many lines. [16/13]
+def generate_commands ...
+^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:74:27: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+  commands.to_a.sort do |x,y|
+                          ^
+redis-6.0.3/utils/generate-command-help.rb:76:3: C: Style/MultilineBlockChain: Avoid multi-line chains of blocks.
+  end.map do |key, command|
+  ^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:79:7: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+      STDERR.puts "Please update groups array in #{__FILE__}"
+      ^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:79:7: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+      STDERR.puts "Please update groups array in #{__FILE__}"
+      ^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:80:38: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+      raise "Unknown group #{command["group"]}"
+                                     ^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:84:1: C: [Correctable] Layout/HeredocIndentation: Use 2 spaces for indentation in a heredoc by using <<~ instead of <<-.
+{ "#{key}", ...
+^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:86:16: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+    "#{command["summary"]}",
+               ^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:88:16: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+    "#{command["since"]}" }
+               ^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:96:1: C: [Correctable] Layout/HeredocIndentation: Use 2 spaces for indentation in a heredoc by using <<~ instead of <<-.
+/* Automatically generated by #{__FILE__}, do not edit. */ ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/generate-command-help.rb:117:1: C: [Correctable] Layout/TrailingEmptyLines: 1 trailing blank lines detected.
+redis-6.0.3/utils/hyperloglog/hll-err.rb:1:1: C: Naming/FileName: The name of this source file (hll-err.rb) should use snake_case.
+# hll-err.rb - Copyright (C) 2014 Salvatore Sanfilippo
+^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:13:1: C: [Correctable] Style/InfiniteLoop: Use Kernel#loop for infinite loops.
+while true do
+^^^^^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:13:12: C: [Correctable] Style/WhileUntilDo: Do not use do with multi-line while.
+while true do
+           ^^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:14:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    100.times {
+^^^^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:14:15: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    100.times {
+              ^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:15:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        elements = []
+    ^^^^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:16:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        1000.times {
+                   ^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:17:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            ele = Digest::SHA1.hexdigest(i.to_s)
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:21:22: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.pfadd('hll',elements)
+                     ^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:24:22: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+    abs_err = (approx-i).abs
+                     ^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:25:23: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    rel_err = 100.to_f*abs_err/i
+                      ^
+redis-6.0.3/utils/hyperloglog/hll-err.rb:25:31: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    rel_err = 100.to_f*abs_err/i
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:1:1: C: Naming/FileName: The name of this source file (hll-gnuplot-graph.rb) should use snake_case.
+# hll-err.rb - Copyright (C) 2014 Salvatore Sanfilippo
+^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:1: C: Metrics/AbcSize: Assignment Branch Condition size for run_experiment is too high. [<9, 14, 4> 17.12/17]
+def run_experiment(r,seed,max,step) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:1: C: Metrics/MethodLength: Method has too many lines. [18/13]
+def run_experiment(r,seed,max,step) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:20: C: Naming/MethodParameterName: Method parameter must be at least 3 characters long.
+def run_experiment(r,seed,max,step)
+                   ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:21: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def run_experiment(r,seed,max,step)
+                    ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:26: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def run_experiment(r,seed,max,step)
+                         ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:21:30: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def run_experiment(r,seed,max,step)
+                             ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:22:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    r.del('hll')
+^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:26:19: C: [Correctable] Style/WhileUntilDo: Do not use do with multi-line while.
+    while i < max do
+                  ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:27:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        elements = []
+    ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:28:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        step.times {
+                   ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:29:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            ele = Digest::SHA1.hexdigest(i.to_s+seed.to_s)
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:29:48: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+            ele = Digest::SHA1.hexdigest(i.to_s+seed.to_s)
+                                               ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:33:22: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.pfadd('hll',elements)
+                     ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:35:21: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+        err = approx-i
+                    ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:36:27: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+        rel_err = 100.to_f*err/i
+                          ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:36:31: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+        rel_err = 100.to_f*err/i
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:37:22: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        samples << [i,rel_err]
+                     ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:1: C: Metrics/AbcSize: Assignment Branch Condition size for filter_samples is too high. [<25, 36, 17> 47.01/17]
+def filter_samples(numsets,max,step,filter) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:1: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for filter_samples is too high. [12/9]
+def filter_samples(numsets,max,step,filter) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:1: C: Metrics/MethodLength: Method has too many lines. [39/13]
+def filter_samples(numsets,max,step,filter) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:1: C: Metrics/PerceivedComplexity: Perceived complexity for filter_samples is too high. [13/9]
+def filter_samples(numsets,max,step,filter) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:27: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def filter_samples(numsets,max,step,filter)
+                          ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:31: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def filter_samples(numsets,max,step,filter)
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:42:36: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+def filter_samples(numsets,max,step,filter)
+                                   ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:43:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    r = Redis.new
+^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:45:23: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    (0...numsets).each{|i|
+                      ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:45:23: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    (0...numsets).each{|i|
+                      ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:45:23: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    (0...numsets).each{|i|
+                      ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:46:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        dataset[i] = run_experiment(r,i,max,step)
+    ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:46:38: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        dataset[i] = run_experiment(r,i,max,step)
+                                     ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:46:40: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        dataset[i] = run_experiment(r,i,max,step)
+                                       ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:46:44: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        dataset[i] = run_experiment(r,i,max,step)
+                                           ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:47:9: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+        STDERR.puts "Set #{i}"
+        ^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:47:9: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+        STDERR.puts "Set #{i}"
+        ^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:49:5: C: Metrics/BlockLength: Block has too many lines. [31/25]
+    dataset[0].each_with_index{|ele,index| ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:49:31: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    dataset[0].each_with_index{|ele,index|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:49:31: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    dataset[0].each_with_index{|ele,index|
+                              ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:49:31: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    dataset[0].each_with_index{|ele,index|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:49:36: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    dataset[0].each_with_index{|ele,index|
+                                   ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:50:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if filter == :max
+    ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:50:9: C: [Correctable] Style/CaseLikeIf: Convert if-elsif to case-when.
+        if filter == :max ...
+        ^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:51:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            card=ele[0]
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:51:17: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+            card=ele[0]
+                ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:52:16: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+            err=ele[1].abs
+               ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:53:31: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            (1...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:53:31: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            (1...numsets).each{|i|
+                              ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:53:31: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+            (1...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:54:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                err = dataset[i][index][1] if err < dataset[i][index][1]
+            ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:58:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            card=ele[0]
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:58:17: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+            card=ele[0]
+                ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:60:31: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:60:31: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            (0...numsets).each{|i|
+                              ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:60:31: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:61:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                err += dataset[i][index][1]
+            ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:66:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            card=ele[0]
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:66:17: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+            card=ele[0]
+                ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:68:31: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:68:31: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            (0...numsets).each{|i|
+                              ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:68:31: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:69:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                err += dataset[i][index][1].abs
+            ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:74:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            (0...numsets).each{|i|
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:74:31: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:74:31: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+            (0...numsets).each{|i|
+                              ^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:74:31: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+            (0...numsets).each{|i|
+                              ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:75:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                card,err = dataset[i][index]
+            ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:75:21: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+                card,err = dataset[i][index]
+                    ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:79:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            raise "Unknown filter #{filter}"
+        ^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:85:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    puts "Usage: hll-gnuplot-graph <samples> <max> <step> (max|avg|absavg|all)"
+^^^^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:88:28: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+filter_samples(ARGV[0].to_i,ARGV[1].to_i,ARGV[2].to_i,ARGV[3].to_sym)
+                           ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:88:41: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+filter_samples(ARGV[0].to_i,ARGV[1].to_i,ARGV[2].to_i,ARGV[3].to_sym)
+                                        ^
+redis-6.0.3/utils/hyperloglog/hll-gnuplot-graph.rb:88:54: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+filter_samples(ARGV[0].to_i,ARGV[1].to_i,ARGV[2].to_i,ARGV[3].to_sym)
+                                                     ^
+redis-6.0.3/utils/lru/test-lru.rb:1:1: C: Naming/FileName: The name of this source file (test-lru.rb) should use snake_case.
+require 'rubygems'
+^
+redis-6.0.3/utils/lru/test-lru.rb:4:1: C: Style/GlobalVars: Do not introduce global variables.
+$runs = []; # Remember the error rate of each run for average purposes.
+^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:5:1: C: Style/GlobalVars: Do not introduce global variables.
+$o = {};    # Options set parsing arguments
+^^
+redis-6.0.3/utils/lru/test-lru.rb:7:1: C: Metrics/AbcSize: Assignment Branch Condition size for testit is too high. [<37, 82, 48> 102/17]
+def testit(filename) ...
+^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:7:1: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for testit is too high. [28/9]
+def testit(filename) ...
+^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:7:1: C: Metrics/MethodLength: Method has too many lines. [140/13]
+def testit(filename) ...
+^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:7:1: C: Metrics/PerceivedComplexity: Perceived complexity for testit is too high. [35/9]
+def testit(filename) ...
+^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:8:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    r = Redis.new
+^^^^
+redis-6.0.3/utils/lru/test-lru.rb:9:19: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    r.config("SET","maxmemory","2000000")
+                  ^
+redis-6.0.3/utils/lru/test-lru.rb:9:31: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    r.config("SET","maxmemory","2000000")
+                              ^
+redis-6.0.3/utils/lru/test-lru.rb:10:8: C: Style/GlobalVars: Do not introduce global variables.
+    if $o[:ttl]
+       ^^
+redis-6.0.3/utils/lru/test-lru.rb:11:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        r.config("SET","maxmemory-policy","volatile-ttl")
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:11:23: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.config("SET","maxmemory-policy","volatile-ttl")
+                      ^
+redis-6.0.3/utils/lru/test-lru.rb:11:42: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.config("SET","maxmemory-policy","volatile-ttl")
+                                         ^
+redis-6.0.3/utils/lru/test-lru.rb:13:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        r.config("SET","maxmemory-policy","allkeys-lru")
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:13:23: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.config("SET","maxmemory-policy","allkeys-lru")
+                      ^
+redis-6.0.3/utils/lru/test-lru.rb:13:42: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+        r.config("SET","maxmemory-policy","allkeys-lru")
+                                         ^
+redis-6.0.3/utils/lru/test-lru.rb:15:19: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    r.config("SET","maxmemory-samples",5)
+                  ^
+redis-6.0.3/utils/lru/test-lru.rb:15:39: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    r.config("SET","maxmemory-samples",5)
+                                      ^
+redis-6.0.3/utils/lru/test-lru.rb:48:1: C: Naming/HeredocDelimiterNaming: Use meaningful heredoc delimiters.
+EOF
+^^^
+redis-6.0.3/utils/lru/test-lru.rb:53:5: C: [Correctable] Style/InfiniteLoop: Use Kernel#loop for infinite loops.
+    while true
+    ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:54:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        id += 1
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:56:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.set(id,"foo")
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:56:21: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            r.set(id,"foo")
+                    ^
+redis-6.0.3/utils/lru/test-lru.rb:57:9: C: [Correctable] Style/RescueStandardError: Avoid rescuing without specifying an error class.
+        rescue
+        ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:58:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            break
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:61:9: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+        break if newsize == oldsize # A key was evicted? Stop.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:72:8: C: Style/GlobalVars: Do not introduce global variables.
+    if $o[:ttl]
+       ^^
+redis-6.0.3/utils/lru/test-lru.rb:73:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        STDERR.puts "Set increasing expire value"
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:73:9: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+        STDERR.puts "Set increasing expire value"
+        ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:73:9: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+        STDERR.puts "Set increasing expire value"
+        ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:74:35: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+        (1..first_set_max_id).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:74:35: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+        (1..first_set_max_id).each{|id|
+                                  ^^
+redis-6.0.3/utils/lru/test-lru.rb:74:35: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        (1..first_set_max_id).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:74:37: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - id.
+        (1..first_set_max_id).each{|id|
+                                    ^^
+redis-6.0.3/utils/lru/test-lru.rb:75:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.expire(id,1000+id)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:75:24: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            r.expire(id,1000+id)
+                       ^
+redis-6.0.3/utils/lru/test-lru.rb:75:29: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+            r.expire(id,1000+id)
+                            ^
+redis-6.0.3/utils/lru/test-lru.rb:76:13: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+            STDERR.print(".") if (id % 150) == 0
+            ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:76:34: C: [Correctable] Style/NumericPredicate: Use (id % 150).zero? instead of (id % 150) == 0.
+            STDERR.print(".") if (id % 150) == 0
+                                 ^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:79:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        STDERR.puts "Access keys sequentially"
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:79:9: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+        STDERR.puts "Access keys sequentially"
+        ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:79:9: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+        STDERR.puts "Access keys sequentially"
+        ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:80:35: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+        (1..first_set_max_id).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:80:35: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+        (1..first_set_max_id).each{|id|
+                                  ^^
+redis-6.0.3/utils/lru/test-lru.rb:80:35: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        (1..first_set_max_id).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:80:37: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - id.
+        (1..first_set_max_id).each{|id|
+                                    ^^
+redis-6.0.3/utils/lru/test-lru.rb:81:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.get(id)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:83:13: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+            STDERR.print(".") if (id % 150) == 0
+            ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:83:34: C: [Correctable] Style/NumericPredicate: Use (id % 150).zero? instead of (id % 150) == 0.
+            STDERR.print(".") if (id % 150) == 0
+                                 ^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:86:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:93:20: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    half = inserted/2
+                   ^
+redis-6.0.3/utils/lru/test-lru.rb:97:27: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+    otherdb_start_idx = id+1
+                          ^
+redis-6.0.3/utils/lru/test-lru.rb:98:25: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+    otherdb_end_idx = id+100
+                        ^
+redis-6.0.3/utils/lru/test-lru.rb:99:5: C: [Correctable] Style/InfiniteLoop: Use Kernel#loop for infinite loops.
+    while true
+    ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:100:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        add += 1
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:103:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.select(1)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:104:21: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            r.set(id,"foo")
+                    ^
+redis-6.0.3/utils/lru/test-lru.rb:107:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.set(id,"foo")
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:107:21: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+            r.set(id,"foo")
+                    ^
+redis-6.0.3/utils/lru/test-lru.rb:120:5: W: Lint/UselessAssignment: Useless assignment to variable - e.
+    e = 1
+    ^
+redis-6.0.3/utils/lru/test-lru.rb:121:21: C: [Correctable] Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+    error_per_key = 100000.0/first_set_max_id
+                    ^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:121:29: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    error_per_key = 100000.0/first_set_max_id
+                            ^
+redis-6.0.3/utils/lru/test-lru.rb:122:37: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    half_set_size = first_set_max_id/2
+                                    ^
+redis-6.0.3/utils/lru/test-lru.rb:124:26: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    (1..(first_set_max_id/2)).each{|id|
+                         ^
+redis-6.0.3/utils/lru/test-lru.rb:124:35: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    (1..(first_set_max_id/2)).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:124:35: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    (1..(first_set_max_id/2)).each{|id|
+                                  ^^
+redis-6.0.3/utils/lru/test-lru.rb:124:35: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    (1..(first_set_max_id/2)).each{|id|
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:124:37: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - id.
+    (1..(first_set_max_id/2)).each{|id|
+                                    ^^
+redis-6.0.3/utils/lru/test-lru.rb:125:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if id >= otherdb_start_idx && id <= otherdb_end_idx
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:126:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.select(1)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:130:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            exists = r.exists(id)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:132:33: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+        if id < first_set_max_id/2
+                                ^
+redis-6.0.3/utils/lru/test-lru.rb:133:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            thiserr = error_per_key * ((half_set_size-id).to_f/half_set_size)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:133:54: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+            thiserr = error_per_key * ((half_set_size-id).to_f/half_set_size)
+                                                     ^
+redis-6.0.3/utils/lru/test-lru.rb:133:63: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+            thiserr = error_per_key * ((half_set_size-id).to_f/half_set_size)
+                                                              ^
+redis-6.0.3/utils/lru/test-lru.rb:136:37: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+        elsif id >= first_set_max_id/2
+                                    ^
+redis-6.0.3/utils/lru/test-lru.rb:137:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            thiserr = error_per_key * ((id-half_set_size).to_f/half_set_size)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:137:43: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator -.
+            thiserr = error_per_key * ((id-half_set_size).to_f/half_set_size)
+                                          ^
+redis-6.0.3/utils/lru/test-lru.rb:137:63: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+            thiserr = error_per_key * ((id-half_set_size).to_f/half_set_size)
+                                                              ^
+redis-6.0.3/utils/lru/test-lru.rb:139:13: C: [Correctable] Style/NegatedIf: Favor unless over if for negative conditions.
+            errors += thiserr if !exists
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:142:20: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    errors = errors*100/maxerr
+                   ^
+redis-6.0.3/utils/lru/test-lru.rb:142:24: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator /.
+    errors = errors*100/maxerr
+                       ^
+redis-6.0.3/utils/lru/test-lru.rb:144:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "Test finished with #{errors}% error! Generating HTML on stdout."
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:144:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "Test finished with #{errors}% error! Generating HTML on stdout."
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:148:5: C: Style/GlobalVars: Do not introduce global variables.
+    $runs << errors
+    ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:151:17: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    (1..id).each{|id|
+                ^
+redis-6.0.3/utils/lru/test-lru.rb:151:17: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    (1..id).each{|id|
+                ^^
+redis-6.0.3/utils/lru/test-lru.rb:151:17: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    (1..id).each{|id|
+                ^
+redis-6.0.3/utils/lru/test-lru.rb:151:19: W: Lint/ShadowingOuterLocalVariable: Shadowing outer local variable - id.
+    (1..id).each{|id|
+                  ^^
+redis-6.0.3/utils/lru/test-lru.rb:153:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        c = "box"
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:154:9: C: [Correctable] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
+        if id >= otherdb_start_idx && id <= otherdb_end_idx ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:155:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            c << " otherdb"
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:157:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            c << " old"
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:159:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            c << " new"
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:164:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.select(1)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:168:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            exists = r.exists(id)
+        ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:180:1: C: Naming/HeredocDelimiterNaming: Use meaningful heredoc delimiters.
+EOF
+^^^
+redis-6.0.3/utils/lru/test-lru.rb:182:27: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    f = File.open(filename,"w")
+                          ^
+redis-6.0.3/utils/lru/test-lru.rb:188:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+^^^^
+redis-6.0.3/utils/lru/test-lru.rb:188:12: C: Style/GlobalVars: Do not introduce global variables.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+           ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:188:25: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+                        ^^
+redis-6.0.3/utils/lru/test-lru.rb:188:28: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+                           ^
+redis-6.0.3/utils/lru/test-lru.rb:188:33: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+                                ^
+redis-6.0.3/utils/lru/test-lru.rb:188:35: C: [Correctable] Layout/SpaceInsideBlockBraces: Space missing inside }.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+                                  ^
+redis-6.0.3/utils/lru/test-lru.rb:188:40: C: Style/GlobalVars: Do not introduce global variables.
+    avg = ($runs.reduce {|a,b| a+b}) / $runs.length
+                                       ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:189:13: C: Style/GlobalVars: Do not introduce global variables.
+    puts "#{$runs.length} runs, AVG is #{avg}"
+            ^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:192:4: C: [Correctable] Style/ZeroLengthPredicate: Use empty? instead of length < 1.
+if ARGV.length < 1
+   ^^^^^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:193:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    STDERR.puts "Usage: ruby test-lru.rb <html-output-filename> [--runs <count>] [--ttl]"
+^^^^
+redis-6.0.3/utils/lru/test-lru.rb:193:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "Usage: ruby test-lru.rb <html-output-filename> [--runs <count>] [--ttl]"
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:193:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "Usage: ruby test-lru.rb <html-output-filename> [--runs <count>] [--ttl]"
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:194:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "Options:"
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:194:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "Options:"
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:195:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "  --runs <count>    Execute the test <count> times."
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:195:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "  --runs <count>    Execute the test <count> times."
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:196:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "  --ttl             Set keys with increasing TTL values"
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:196:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "  --ttl             Set keys with increasing TTL values"
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:197:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "                    (starting from 1000 seconds) in order to"
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:197:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "                    (starting from 1000 seconds) in order to"
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:198:5: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+    STDERR.puts "                    test the volatile-lru policy."
+    ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:198:5: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+    STDERR.puts "                    test the volatile-lru policy."
+    ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:203:1: C: Style/GlobalVars: Do not introduce global variables.
+$o[:numruns] = 1
+^^
+redis-6.0.3/utils/lru/test-lru.rb:208:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    if ARGV[i] == '--runs'
+^^^^
+redis-6.0.3/utils/lru/test-lru.rb:209:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        $o[:numruns] = ARGV[i+1].to_i
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:209:9: C: Style/GlobalVars: Do not introduce global variables.
+        $o[:numruns] = ARGV[i+1].to_i
+        ^^
+redis-6.0.3/utils/lru/test-lru.rb:209:30: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+        $o[:numruns] = ARGV[i+1].to_i
+                             ^
+redis-6.0.3/utils/lru/test-lru.rb:210:10: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +=.
+        i+= 1
+         ^^
+redis-6.0.3/utils/lru/test-lru.rb:212:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        $o[:ttl] = true
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:212:9: C: Style/GlobalVars: Do not introduce global variables.
+        $o[:ttl] = true
+        ^^
+redis-6.0.3/utils/lru/test-lru.rb:214:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        STDERR.puts "Unknown option #{ARGV[i]}"
+    ^^^^
+redis-6.0.3/utils/lru/test-lru.rb:214:9: C: [Correctable] Style/GlobalStdStream: Use $stderr instead of STDERR.
+        STDERR.puts "Unknown option #{ARGV[i]}"
+        ^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:214:9: C: [Correctable] Style/StderrPuts: Use warn instead of STDERR.puts to allow such output to be disabled.
+        STDERR.puts "Unknown option #{ARGV[i]}"
+        ^^^^^^^^^^^
+redis-6.0.3/utils/lru/test-lru.rb:217:6: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +=.
+    i+= 1
+     ^^
+redis-6.0.3/utils/lru/test-lru.rb:220:1: C: Style/GlobalVars: Do not introduce global variables.
+$o[:numruns].times {
+^^
+redis-6.0.3/utils/lru/test-lru.rb:220:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+$o[:numruns].times {
+                   ^
+redis-6.0.3/utils/lru/test-lru.rb:221:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    testit(filename)
+^^^^
+redis-6.0.3/utils/lru/test-lru.rb:222:18: C: Style/GlobalVars: Do not introduce global variables.
+    print_avg if $o[:numruns] != 1
+                 ^^
+redis-6.0.3/utils/redis-copy.rb:1:1: C: Naming/FileName: The name of this source file (redis-copy.rb) should use snake_case.
+# redis-copy.rb - Copyright (C) 2009-2010 Salvatore Sanfilippo
+^
+redis-6.0.3/utils/redis-copy.rb:11:5: C: Naming/MethodName: Use snake_case for method names.
+def redisCopy(opts={})
+    ^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:11:19: C: [Correctable] Layout/SpaceAroundEqualsInParameterDefault: Surrounding space missing in default value assignment.
+def redisCopy(opts={})
+                  ^
+redis-6.0.3/utils/redis-copy.rb:16:3: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+  $stderr.puts 'This utility requires the redis-copy executable',
+  ^^^^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:22:1: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+$stderr.puts "This utility is deprecated. Use the redis-copy gem instead."
+^^^^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:24:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    puts "Usage: redis-copy.rb <srchost> <srcport> <dsthost> <dstport>"
+^^^^
+redis-6.0.3/utils/redis-copy.rb:28:1: C: [Correctable] Style/GlobalStdStream: Use $stdin instead of STDIN.
+STDIN.gets
+^^^^^
+redis-6.0.3/utils/redis-copy.rb:34:11: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+redisCopy(:srchost => srchost, :srcport => srcport.to_i,
+          ^^^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:34:32: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+redisCopy(:srchost => srchost, :srcport => srcport.to_i,
+                               ^^^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:35:11: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+          :dsthost => dsthost, :dstport => dstport.to_i)
+          ^^^^^^^^^^^
+redis-6.0.3/utils/redis-copy.rb:35:32: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+          :dsthost => dsthost, :dstport => dstport.to_i)
+                               ^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:1:1: C: Naming/FileName: The name of this source file (redis-sha1.rb) should use snake_case.
+# redis-sha1.rb - Copyright (C) 2009 Salvatore Sanfilippo
+^
+redis-6.0.3/utils/redis-sha1.rb:15:1: C: Metrics/AbcSize: Assignment Branch Condition size for redisSha1 is too high. [<16, 33, 15> 39.62/17]
+def redisSha1(opts={}) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:15:1: C: Metrics/MethodLength: Method has too many lines. [29/13]
+def redisSha1(opts={}) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:15:1: C: Metrics/PerceivedComplexity: Perceived complexity for redisSha1 is too high. [10/9]
+def redisSha1(opts={}) ...
+^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:15:5: C: Naming/MethodName: Use snake_case for method names.
+def redisSha1(opts={})
+    ^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:15:19: C: [Correctable] Layout/SpaceAroundEqualsInParameterDefault: Surrounding space missing in default value assignment.
+def redisSha1(opts={})
+                  ^
+redis-6.0.3/utils/redis-sha1.rb:16:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    sha1=""
+^^^^
+redis-6.0.3/utils/redis-sha1.rb:16:9: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+    sha1=""
+        ^
+redis-6.0.3/utils/redis-sha1.rb:18:26: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    r.keys('*').sort.each{|k|
+                         ^
+redis-6.0.3/utils/redis-sha1.rb:18:26: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    r.keys('*').sort.each{|k|
+                         ^^
+redis-6.0.3/utils/redis-sha1.rb:18:26: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    r.keys('*').sort.each{|k|
+                         ^
+redis-6.0.3/utils/redis-sha1.rb:19:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        vtype = r.type?(k)
+    ^^^^
+redis-6.0.3/utils/redis-sha1.rb:20:9: C: [Correctable] Style/CaseLikeIf: Convert if-elsif to case-when.
+        if vtype == "string" ...
+        ^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:21:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            len = 1
+        ^^^^
+redis-6.0.3/utils/redis-sha1.rb:21:13: W: Lint/UselessAssignment: Useless assignment to variable - len.
+            len = 1
+            ^^^
+redis-6.0.3/utils/redis-sha1.rb:22:47: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+            sha1 = Digest::SHA1.hexdigest(sha1+k)
+                                              ^
+redis-6.0.3/utils/redis-sha1.rb:23:47: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+            sha1 = Digest::SHA1.hexdigest(sha1+r.get(k))
+                                              ^
+redis-6.0.3/utils/redis-sha1.rb:25:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            len = r.llen(k)
+        ^^^^
+redis-6.0.3/utils/redis-sha1.rb:27:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+            ^^^^
+redis-6.0.3/utils/redis-sha1.rb:27:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:28:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.list_range(k,0,-1).join("\x01"))
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:28:66: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.list_range(k,0,-1).join("\x01"))
+                                                                 ^
+redis-6.0.3/utils/redis-sha1.rb:28:68: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.list_range(k,0,-1).join("\x01"))
+                                                                   ^
+redis-6.0.3/utils/redis-sha1.rb:31:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            len = r.scard(k)
+        ^^^^
+redis-6.0.3/utils/redis-sha1.rb:33:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+            ^^^^
+redis-6.0.3/utils/redis-sha1.rb:33:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:34:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.set_members(k).to_a.sort.join("\x02"))
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:37:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            len = r.zcard(k)
+        ^^^^
+redis-6.0.3/utils/redis-sha1.rb:39:13: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+            ^^^^
+redis-6.0.3/utils/redis-sha1.rb:39:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+k)
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:40:51: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.zrange(k,0,-1).join("\x01"))
+                                                  ^
+redis-6.0.3/utils/redis-sha1.rb:40:62: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.zrange(k,0,-1).join("\x01"))
+                                                             ^
+redis-6.0.3/utils/redis-sha1.rb:40:64: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+                sha1 = Digest::SHA1.hexdigest(sha1+r.zrange(k,0,-1).join("\x01"))
+                                                               ^
+redis-6.0.3/utils/redis-sha1.rb:43:9: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 8 instead of 6).
+        # puts "#{k} => #{sha1}" if len != 0
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:52:30: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+p "Dataset SHA1: #{redisSha1(:host => host, :port => port.to_i, :db => db)}"
+                             ^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:52:45: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+p "Dataset SHA1: #{redisSha1(:host => host, :port => port.to_i, :db => db)}"
+                                            ^^^^^^^^
+redis-6.0.3/utils/redis-sha1.rb:52:65: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+p "Dataset SHA1: #{redisSha1(:host => host, :port => port.to_i, :db => db)}"
+                                                                ^^^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:5:15: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+r.del("myset");
+              ^
+redis-6.0.3/utils/srandmember/showdist.rb:6:15: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+r.sadd("myset",(0..999).to_a)
+              ^
+redis-6.0.3/utils/srandmember/showdist.rb:8:11: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+100.times {
+          ^
+redis-6.0.3/utils/srandmember/showdist.rb:9:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    res = r.pipelined {
+^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:9:23: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    res = r.pipelined {
+                      ^
+redis-6.0.3/utils/srandmember/showdist.rb:10:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        1000.times {
+    ^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:10:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        1000.times {
+                   ^
+redis-6.0.3/utils/srandmember/showdist.rb:11:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.srandmember("myset")
+        ^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:14:13: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    res.each{|ele|
+            ^
+redis-6.0.3/utils/srandmember/showdist.rb:14:13: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    res.each{|ele|
+            ^^
+redis-6.0.3/utils/srandmember/showdist.rb:14:13: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    res.each{|ele|
+            ^
+redis-6.0.3/utils/srandmember/showdist.rb:15:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        freq[ele] = 0 if freq[ele] == nil
+    ^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:15:36: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+        freq[ele] = 0 if freq[ele] == nil
+                                   ^^
+redis-6.0.3/utils/srandmember/showdist.rb:22:10: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+freq.each{|item,count|
+         ^
+redis-6.0.3/utils/srandmember/showdist.rb:22:10: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+freq.each{|item,count|
+         ^^
+redis-6.0.3/utils/srandmember/showdist.rb:22:10: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+freq.each{|item,count|
+         ^
+redis-6.0.3/utils/srandmember/showdist.rb:22:12: W: [Correctable] Lint/UnusedBlockArgument: Unused block argument - item. If it's necessary, use _ or _item as an argument name to indicate that it won't be used.
+freq.each{|item,count|
+           ^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:22:16: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+freq.each{|item,count|
+               ^
+redis-6.0.3/utils/srandmember/showdist.rb:23:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    dist[count] = 0 if dist[count] == nil
+^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:23:36: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+    dist[count] = 0 if dist[count] == nil
+                                   ^^
+redis-6.0.3/utils/srandmember/showdist.rb:29:16: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+(min..max).each{|x|
+               ^
+redis-6.0.3/utils/srandmember/showdist.rb:29:16: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+(min..max).each{|x|
+               ^^
+redis-6.0.3/utils/srandmember/showdist.rb:29:16: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+(min..max).each{|x|
+               ^
+redis-6.0.3/utils/srandmember/showdist.rb:30:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    count = dist[x]
+^^^^
+redis-6.0.3/utils/srandmember/showdist.rb:31:24: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+    count = 0 if count == nil
+                       ^^
+redis-6.0.3/utils/srandmember/showdist.rb:32:21: C: [Correctable] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
+    puts "#{x} -> #{"*"*count}"
+                    ^^^
+redis-6.0.3/utils/srandmember/showdist.rb:32:24: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    puts "#{x} -> #{"*"*count}"
+                       ^
+redis-6.0.3/utils/srandmember/showfreq.rb:5:15: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+r.del("myset");
+              ^
+redis-6.0.3/utils/srandmember/showfreq.rb:6:15: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+r.sadd("myset",(0..999).to_a)
+              ^
+redis-6.0.3/utils/srandmember/showfreq.rb:8:11: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+500.times {
+          ^
+redis-6.0.3/utils/srandmember/showfreq.rb:9:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    res = r.pipelined {
+^^^^
+redis-6.0.3/utils/srandmember/showfreq.rb:9:23: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    res = r.pipelined {
+                      ^
+redis-6.0.3/utils/srandmember/showfreq.rb:10:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        1000.times {
+    ^^^^
+redis-6.0.3/utils/srandmember/showfreq.rb:10:20: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+        1000.times {
+                   ^
+redis-6.0.3/utils/srandmember/showfreq.rb:11:9: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            r.srandmember("myset")
+        ^^^^
+redis-6.0.3/utils/srandmember/showfreq.rb:14:13: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+    res.each{|ele|
+            ^
+redis-6.0.3/utils/srandmember/showfreq.rb:14:13: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+    res.each{|ele|
+            ^^
+redis-6.0.3/utils/srandmember/showfreq.rb:14:13: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+    res.each{|ele|
+            ^
+redis-6.0.3/utils/srandmember/showfreq.rb:15:5: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        freq[ele] = 0 if freq[ele] == nil
+    ^^^^
+redis-6.0.3/utils/srandmember/showfreq.rb:15:36: C: [Correctable] Style/NilComparison: Prefer the use of the nil? predicate.
+        freq[ele] = 0 if freq[ele] == nil
+                                   ^^
+redis-6.0.3/utils/srandmember/showfreq.rb:21:10: C: [Correctable] Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+freq.each{|item,count|
+         ^
+redis-6.0.3/utils/srandmember/showfreq.rb:21:10: C: [Correctable] Layout/SpaceInsideBlockBraces: Space between { and | missing.
+freq.each{|item,count|
+         ^^
+redis-6.0.3/utils/srandmember/showfreq.rb:21:10: C: [Correctable] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
+freq.each{|item,count|
+         ^
+redis-6.0.3/utils/srandmember/showfreq.rb:21:16: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+freq.each{|item,count|
+               ^
+redis-6.0.3/utils/srandmember/showfreq.rb:22:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    puts "#{item} #{count}"
+^^^^
+test/controllers/api/v1/articles_controller_test.rb:3:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class Api::V1::ArticlesControllerTest < ActionDispatch::IntegrationTest
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/mailers/previews/visitor_mailer_preview.rb:3:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+
+147 files inspected, 771 offenses detected, 636 offenses autocorrectable

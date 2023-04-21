@@ -89,7 +89,7 @@ Layout/SpaceInsideArrayLiteralBrackets:
 # SupportedStyles: space, no_space, compact
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: 
+  EnforcedStyle: space
 
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).

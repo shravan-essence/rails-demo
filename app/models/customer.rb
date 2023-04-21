@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-	has_and_belongs_to_many :groceries
+  has_and_belongs_to_many :groceries
 end

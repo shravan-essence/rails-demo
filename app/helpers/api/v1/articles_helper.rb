@@ -1,2 +1,6 @@
-module Api::V1::ArticlesHelper
+module Api
+  module V1
+    module ArticlesHelper
+    end
+  end
 end

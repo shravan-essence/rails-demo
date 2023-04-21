@@ -26,7 +26,7 @@ class WeatherService
     {
       temp_c: @weather_data["current"]["temp_c"],
       condition_text: @weather_data["current"]["condition"]["text"],
-      icon_url: "https:#{@weather_data["current"]["condition"]["icon"]}"
+      icon_url: "https:#{@weather_data['current']['condition']['icon']}"
     }
   end
 end

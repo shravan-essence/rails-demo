@@ -7,18 +7,16 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find(params[:id])
-    weather_service =  WeatherService.new(@author.city)
+    weather_service = WeatherService.new(@author.city)
     @weather_data = weather_service.call
   end
 
   def new
     @author = Author.new
-
   end
 
   def create
-
-    @author = Author.new(author_params())
+    @author = Author.new(author_params)
     if @author.save
       cookies.encrypted[:name] = @author.name
       cookies[:city] = @author.city
@@ -47,8 +45,8 @@ class AuthorsController < ApplicationController
   end
 
   def send_email
-    #Resque.enqueue(AuthorJob, @author)
-    #AuthorJob.perform_later(@author)
-    #VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+    # Resque.enqueue(AuthorJob, @author)
+    # AuthorJob.perform_later(@author)
+    # VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
   end
 end
