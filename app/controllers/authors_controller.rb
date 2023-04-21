@@ -6,9 +6,9 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.find(params[:id])
-    weather_service = WeatherService.new(@author.city)
-    @weather_data = weather_service.call
+    @author = Author.friendly.find(params[:id])
+    # weather_service = WeatherService.new(@author.city)
+    # @weather_data = weather_service.call
   end
 
   def new
@@ -29,7 +29,7 @@ class AuthorsController < ApplicationController
   end
 
   def destroy
-    @author = Author.find(params[:id])
+    @author = Author.friendly.find(params[:id])
     cookies.delete(:name)
     cookies.delete(:city)
     session.delete(:name)
@@ -47,6 +47,6 @@ class AuthorsController < ApplicationController
   def send_email
     # Resque.enqueue(AuthorJob, @author)
     # AuthorJob.perform_later(@author)
-    # VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+     VisitorMailer.welcome_email(@author.name, @author.city).deliver_now
   end
 end

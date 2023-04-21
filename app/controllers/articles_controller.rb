@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+
+  #callbacks
+  before_action :authenticate_student!, except: %i[index show]
+
+
   def index
     @articles = Article.all
   end
@@ -13,6 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article  = Article.new(article_params)
+    authorize @article
     if @article.save
       redirect_to @article
     else
@@ -25,11 +31,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    p "1111111111111111111"
-    p article_params
-    p "1111111111111111111"
-    
     @article = Article.find(params[:id])
+    authorize @article
     if @article.update(article_params)
       redirect_to@article
     else
@@ -39,6 +42,7 @@ class ArticlesController < ApplicationController
 
   def destroy 
     @article = Article.find(params[:id])
+    authorize @article
     @article.destroy
 
     redirect_to root_path, status: :see_other
@@ -47,8 +51,14 @@ class ArticlesController < ApplicationController
   def published
     @articles = Article.published
   end
+
+  def current_user
+    current_student
+  end
+
   private 
-    def article_params
-      params.require(:article).permit(:title, :body, :published)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :published, :book_id)
+  end
 end

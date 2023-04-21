@@ -23,10 +23,14 @@
         <div><%= message %></div>
       <% end %>
     </div>
-      <div>
+    <div>
       <%= form.label :published %><br>
       <%#= form.select(:published, options_for_select([['Yes',true],['No', false]])) %>
       <%= form.check_box :published%>
+    </div>
+    <div>
+      <%= form.label :book_id %><br>
+      <%= form.select(:book_id, options_from_collection_for_select(Book.all, "id","title")) %>
     </div>
     <div>
       <%= form.submit %>

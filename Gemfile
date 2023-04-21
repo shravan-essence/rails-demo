@@ -28,7 +28,7 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
+gem "pundit"
 gem 'bootstrap', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -39,6 +39,7 @@ gem 'redis-rb'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+gem 'friendly_id', '~> 5.4.0'
 # Sidekiq gem for background job
 gem 'sidekiq'
 gem 'sinatra'
@@ -64,6 +65,7 @@ group :development, :test do
   gem 'gchart'
   gem 'resque'
   gem 'rubocop'
+  gem "letter_opener"
 end
 
 group :development do
