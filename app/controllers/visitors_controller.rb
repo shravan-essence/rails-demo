@@ -67,7 +67,7 @@ class VisitorsController < ApplicationController
   end
 
   def send_email
-    VisitorWorker.perform_async(@visitor.name, @visitor.email)
-    # VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
+    # VisitorWorker.perform_async(@visitor.name, @visitor.email)
+    VisitorMailer.welcome_email(@visitor.name, @visitor.email).deliver_now
   end
 end

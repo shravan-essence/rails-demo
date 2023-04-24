@@ -39,15 +39,16 @@
 	    <li>
 	    	<div class="description">
 		    	<%= article.body %>
+		    	<%= article.comments.map(&:commenter) %>
 		    	<% if can? :read, article %>
 		    		<%= link_to "Open Article", article, class: "btn btn-primary"%>
 		    	<% end %>
-		    	
 	      </div>
 	    </li> <br/>
 	  <% end %>
-	</ul>
-
+	</ul> 
+	     
+	    
 	<%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
 	<%= link_to "Show Published articles ", published_articles_path(@articles), class: "btn btn-primary"%>
 	<br>
