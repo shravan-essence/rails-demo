@@ -1,11 +1,13 @@
 require_dependency 'weather_service'
+require 'will_paginate/array'
 
 class AuthorsController < ApplicationController
 
   after_action :send_email, only: :create
 
   def index
-    @authors = Author.all
+    @authors = Author.paginate(:page => params[:page], :per_page => 1)
+    #@authors = Author.all
   end
 
   def show

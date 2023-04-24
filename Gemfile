@@ -33,6 +33,8 @@ gem "jbuilder"
 gem "pundit"
 gem 'cancancan'
 
+gem 'will_paginate', '~> 3.0'
+
 gem 'bootstrap', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

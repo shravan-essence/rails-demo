@@ -29,7 +29,25 @@
 	    </li> <br/>
 	  <% end %>
 	</ul>
+	<section class="pagination-section">
+		
+		<div class="row pagination-row">
+			<div class="col-lg-12 col-md-8 col-sm-7 col-xs-6 padding-zero Page navigation">
+				<ul class="pagination">
+					<li class="disabled"> 
+						<%= will_paginate(@authors,:previous_label => '&laquo;', :next_label => "&raquo;") %>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12 col-md-4 col-sm-5 col-xs-6 pagination-info">
+				<span class="pull-right"><%= page_entries_info(@articles) %></span>
+			</div>
+		</div>
 
+	</section>
 	<%= link_to "New Author", new_author_path, class: "btn btn-primary" %>
 </body>
 </html>

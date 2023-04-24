@@ -58,3 +58,19 @@ input[type=email] {
 section.authentication p{
 	display: inline;
 }
+
+.pagination-section {
+	text-align: center;
+}
+
+.pagination-row{
+	text-align: center;
+}
+
+.pagination {
+	display: inline !important;
+}
+
+li {
+	text-decoration: none;
+}
