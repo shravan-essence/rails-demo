@@ -6,7 +6,14 @@
 	<p>
 		<strong>Body: </strong>
 		<%= comment.body %>
-		<%= link_to "Edit", edit_article_comment_path(@article, comment)%>
-		<%= link_to "Delete Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+		<% if can? :update, comment %>
+			<%= link_to "Edit", edit_article_comment_path(@article, comment)%>
+		<% end %>
+		
+		<% if can? :update, comment %>
+			<%= link_to "Delete Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+		<% end %>
+		
 	</p>
 <% end %>

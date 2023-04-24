@@ -22,12 +22,14 @@
 	    <li>
 	    	<div class="description">
 		    	<%= author.city %>
-		    	<%= link_to "Open Author profile", author, class: "btn btn-primary"%>
+		    	<% if can? :read, author %>
+		    		<%= link_to "Open Author profile", author, class: "btn btn-primary"%>
+		    	<% end %>
 	      </div>
 	    </li> <br/>
 	  <% end %>
-
 	</ul>
+
 	<%= link_to "New Author", new_author_path, class: "btn btn-primary" %>
 </body>
 </html>

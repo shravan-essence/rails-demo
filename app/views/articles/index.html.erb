@@ -39,7 +39,10 @@
 	    <li>
 	    	<div class="description">
 		    	<%= article.body %>
-		    	<%= link_to "Open Article", article, class: "btn btn-primary", onclick: "myfunc()"%>
+		    	<% if can? :read, article %>
+		    		<%= link_to "Open Article", article, class: "btn btn-primary"%>
+		    	<% end %>
+		    	
 	      </div>
 	    </li> <br/>
 	  <% end %>

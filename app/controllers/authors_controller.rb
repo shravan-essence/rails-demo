@@ -1,6 +1,9 @@
 require_dependency 'weather_service'
+
 class AuthorsController < ApplicationController
+
   after_action :send_email, only: :create
+
   def index
     @authors = Author.all
   end
@@ -36,6 +39,10 @@ class AuthorsController < ApplicationController
     session.delete(:city)
     @author.destroy
     redirect_to @author
+  end
+
+  def current_user
+    current_student
   end
 
   private

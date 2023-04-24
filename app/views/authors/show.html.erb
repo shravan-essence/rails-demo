@@ -36,8 +36,10 @@
 		<p><%= session[:name]%></p>
 		<p><%= session[:city]%></p>
 	</div>
-
-	<%= link_to "Delete", author_path(@author), data: {turbo_method: :delete,
+	<% if can? :destroy, @author %>
+		<%= link_to "Delete", author_path(@author), data: {turbo_method: :delete,
 	turbo_confirm: "Are you sure?"} %>
+	<% end %>
+	
 </body>
 </html>

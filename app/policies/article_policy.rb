@@ -11,7 +11,7 @@ class ArticlePolicy
   end
 
   def create?
-    student.admin?
+    student.admin? || student.user?
   end
 
   def new?

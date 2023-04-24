@@ -28,7 +28,11 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+# pundit and cancancan used for authorization 
 gem "pundit"
+gem 'cancancan'
+
 gem 'bootstrap', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

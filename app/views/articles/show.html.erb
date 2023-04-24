@@ -10,15 +10,28 @@
 
 	<h2><%= @article.title %></h2>
 	<p><%= @article.body %></p>
-	<%= link_to "Edit", edit_article_path(@article) %>
-	<%= link_to "Delete", article_path(@article), data: {turbo_method: :delete,
-	turbo_confirm: "Are you sure?"} %>
 
-	<h2>Comments</h2>
-	<%= render 'comments/comments'%>
+	<% if can? :update, @article %>
+		<%= link_to "Edit", edit_article_path(@article) %>
+	<% end %>
 	
-	<h2>Add Comment:</h2>
-	<%= render 'comments/form' %>
+	<% if can? :destroy, @article %>
+		<%= link_to "Delete", article_path(@article), data: {turbo_method: :delete,
+	turbo_confirm: "Are you sure?"} %>
+	<% end %>
+	
+	<% if @article.comments.exists?%>
+		<h2>Comments</h2>
+		<%= render 'comments/comments'%>
+	<% else %>
+		<h2> No Comments</h2>
+	<% end %>
+
+	<% if can? :create, @article %>
+		<h2>Add Comment:</h2>
+		<%= render 'comments/form' %>
+	<% end %>
+	
 
 </body>
 </html>
