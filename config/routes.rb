@@ -31,4 +31,6 @@ Rails.application.routes.draw do
 
   resources :billings, only: [:new, :create]
 
+  resources :products
+
 end

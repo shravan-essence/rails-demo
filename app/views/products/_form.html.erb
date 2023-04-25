@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body style="background: white;">
+  <h1>New Product...</h1>
+  <%= form_with model: @product, local: true do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% @product.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+      <% @product.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :price %><br>
+      <%= form.number_field :price%>
+    </div>
+    <div>
+      <%= form.label :image %><br>
+      <%= form.file_field :image %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</body>
+</html>
