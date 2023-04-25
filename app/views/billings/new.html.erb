@@ -1,19 +1,19 @@
 <h1>Bill</h1>
 
 <%= form_tag billings_path do %>
-  <label for="card_number">Card Number:</label>
-  <%= text_field_tag :card_number %>
+  <!-- <label for="card_number">Card Number:</label>
+  <%#= text_field_tag :card_number %>
 
   <label for="card_exp_month">Expiration Month:</label>
-  <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_exp_month"} %>
+  <%#= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_exp_month"} %>
 
   <label for="card_exp_year">Expiration Year:</label>
-  <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {name: nil, id: "card_exp_year"} %>
+  <%#= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {name: nil, id: "card_exp_year"} %>
 
   <label for="card_cvv">CVV:</label>
-  <%= text_field_tag :card_cvv %>
+  <%#= text_field_tag :card_cvv %>
 
-  <%= submit_tag "Pay", class: "btn btn-primary" %>
+  <%#= submit_tag "Pay", class: "btn btn-primary" %> -->
    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_51N0hIlSAGAIftOOZ1fL67leeUH1dZAb3XOTHirbHpH8PlEDURxT2yD7GI6nzo8hqGMPazI3bRu9lsptrAQPe1cpd00VFgTylwQ"
           data-description="A month's subscription"

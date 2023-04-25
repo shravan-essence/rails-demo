@@ -27,18 +27,22 @@ class StripeBillingService
   end
 
 	def create_customer
-		customer = Stripe::Customer.create(email: stripe_email, source: stripe_token)
+		customer = Stripe::Customer.create(email: user.email, source: stripe_token)
 		user.update(stripe_token: customer.id)
 		customer
 	end
-
+#4242 4242 4242 4242 card number for testing and CVV is 123
 	def create_billing(customer)
 		Stripe::PaymentIntent.create(
 			customer: customer.id,
-			amount: 50,
+			amount: amount_in_rupees,
 			description: "Python Book",
 			currency: DEFAULT_CURRENCY
 		)
+	end
+
+	def amount_in_rupees
+		500 * 100
 	end
 
 end

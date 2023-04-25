@@ -6,9 +6,11 @@ class BillingsController < ApplicationController
 	
 	def create
 
-		StripeBillingService.new(billing_params, current_student).call
-		redirect_to new_billing_path
-
+		if StripeBillingService.new(billing_params, current_student).call
+			redirect_to new_billing_path
+		else
+			render :new, status: :unprocessable_entity
+		end
   end
     # # Amount in cents
     # @amount = 500
@@ -37,7 +39,7 @@ class BillingsController < ApplicationController
   end
   
   def billing_params
-  	params.permit(:stripeEmail, :stripeToken)
+  	params.permit(:stripeEmail, :stripeToken,:authenticity_token, :stripeTokenType)
   end
 
 end
