@@ -76,6 +76,8 @@ group :development, :test do
   gem 'resque'
   gem 'rubocop'
   gem "letter_opener"
+  gem 'brakeman'
+  gem 'stripe'
 end
 
 group :development do

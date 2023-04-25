@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   end
 
   resources :authors
+
+  resources :billings, only: [:new, :create]
+
 end
