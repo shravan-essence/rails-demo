@@ -20,5 +20,6 @@ module Demo
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :resque
     config.autoload_paths += %W(#{config.root}/lib)
+    config.action_controller.allow_forgery_protection = false
   end
 end

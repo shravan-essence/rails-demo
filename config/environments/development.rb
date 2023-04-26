@@ -9,7 +9,7 @@ Rails.application.configure do
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
   end
-
+  config.hosts << "fae2-2401-4900-1c80-58ed-61f9-c195-7682-2d10.ngrok-free.app"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -77,29 +77,29 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  config.public_file_server.enabled = true
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-  email: {
-    email_prefix: '[PREFIX] ',
-    sender_address: %{"notifier"},
-    exception_recipients: %w{zeelsakariya07@gmail.com}
-  }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: 'gmail.com',
-    user_name: 'chaudharysharwan2000@gmail.com',
-    password: 'mjzoryddxwihnmrp',
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.public_file_server.enabled = false
+  # Rails.application.config.middleware.use ExceptionNotification::Rack,
+  # email: {
+  #   email_prefix: '[PREFIX] ',
+  #   sender_address: %{"notifier"},
+  #   exception_recipients: %w{zeelsakariya07@gmail.com}
+  # }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.gmail.com',
+  #   port: 587,
+  #   domain: 'gmail.com',
+  #   user_name: 'chaudharysharwan2000@gmail.com',
+  #   password: 'mjzoryddxwihnmrp',
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
 
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.bullet_logger = true
-    Bullet.rails_logger = true
-  end
+  # config.after_initialize do
+  #   Bullet.enable = true
+  #   Bullet.bullet_logger = true
+  #   Bullet.rails_logger = true
+  # end
 end

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	def index
-		@products = Product.all
+		@products = Product.includes(:image_attachment => [:blob]).all
 	end
 
 	def new
@@ -33,11 +33,26 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+  	@product = Product.find(params[:id])
+  	@product.destroy
+  	redirect_to products_path
+  end
+
+  def checkout
+  	@product = product_detail
+  end
+
+  def success
+  end
 	private
 
 	def product_params
 		params.require(:product).permit(:name, :description, :price, :image)
 	end
 
+	def product_detail
+		Product.find(params[:id])
+	end
 
 end

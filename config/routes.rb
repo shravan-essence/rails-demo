@@ -31,6 +31,11 @@ Rails.application.routes.draw do
 
   resources :billings, only: [:new, :create]
 
-  resources :products
+  resources :products do
+    resources :checkouts 
+  end
+  post "/success", to: "product#success"
+  post '/webhooks/webhook', to: 'webhooks#webhook'
+  # post "/products/:product_id/checkout", to: "checkout#create", as: "checkout"
 
 end

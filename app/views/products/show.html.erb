@@ -20,7 +20,12 @@
 	
 		<%= link_to "Delete", product_path(@product), data: {turbo_method: :delete,
 	turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
-</br>
-	<%= link_to "Back", :back, class: "btn btn-primary" %>
+	</br>
+		<%= link_to "Back", :back, class: "btn btn-primary" %>
+	</br>
+		<%#= link_to "Buy", checkout_path(product_id: 1), method: :post, class: "btn btn-danger" %>
+		<%= form_with url: url_for(controller: 'checkouts', action: 'create', product_id: @product.id), method: :post do |form| %>
+  		<%= form.submit "Buy", class: "btn btn-danger", data: { turbo: false } %>
+		<% end %>
 </body>
 </html>
