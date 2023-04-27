@@ -3,7 +3,7 @@ class WebhooksController < ApplicationController
 	skip_before_action :verify_authenticity_token
 
 	def webhook
-		endpoint_secret = 'whsec_d7aa8a0e93cbdb0ababca9f82d3e8596beb35a579113228201d712d65ca3c3c0'
+		endpoint_secret = 'whsec_m7kGwhMRv6gf0WHxvbmTzReTjEHVC9Ty'
 		payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
     event = nil
@@ -25,18 +25,22 @@ class WebhooksController < ApplicationController
     # Handle the event
     case event.type
     when 'checkout.session.completed'
-    	p 111111111111111
+      session =  event.data.object
+
+      p 22222222222222222222
+      p session.metadata['product_id']
+      p 2222222222222222222222222222
+      
+      @product = Product.find(session.metadata['product_id'])
+      @product.update(is_sold: true)
+      flash[:alert] = "Congratulations!!! is successfully purchased."
+    	
+      p 111111111111111
     	p "Completed"
     	p 1111111111111
-    when 'invoice.payment_failed'
-      invoice = event.data.object
-    when 'invoice.payment_succeeded'
-      invoice = event.data.object
-    # ... handle other event types
     else
       puts "Unhandled event type: #{event.type}"
     end
-
-    status 200
+    head 200
 	 end
 end

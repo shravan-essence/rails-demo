@@ -9,8 +9,16 @@
 	
 	<h1><%= @product.name %></h1>
 	
-
-	<p><%= image_tag(@product.image, size: "200" )%></p>
+	<div class="row">
+		<div class="col-6">
+			<p><%= image_tag(@product.image, size: "200" )%></p>
+		</div>
+		<div class="col-6">
+			<%if @product.is_sold%>
+				<p class="sold">Sold</p>
+			<% end %>
+		</div>
+	</div>
 	<p><b>Name:</b> <%= @product.name %></p>
 	<p><b>Description:</b> <%= @product.description %></p>
 	<p><b>Price:</b> Rs.<%= @product.price %></p>

@@ -36,7 +36,7 @@ class StripeBillingService
 
 	def create_billing(customer)
 		Stripe::Checkout::Session.create({
-			customer: user.stripe_token,
+			customer: customer,
 			"allow_promotion_codes": true,
 	    line_items: [{
 	      price_data: {
@@ -50,11 +50,12 @@ class StripeBillingService
 	      },
 	      quantity: 1,
 	    }],
+	    metadata: {product_id: product.id},
 	    mode: 'payment',
 	    payment_method_types: ['card'],
 	    # These placeholder URLs will be replaced in a following step.
-	    success_url: "http://127.0.0.1:3000/products/",
-	    cancel_url: "http://127.0.0.1:3000/products/",
+	    success_url: "https://4ebb-2401-4900-1c80-58ed-3b30-56f7-54cf-9346.ngrok-free.app/products",
+	    cancel_url: "https://4ebb-2401-4900-1c80-58ed-3b30-56f7-54cf-9346.ngrok-free.app/products",
   	})
 	end
 

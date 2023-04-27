@@ -81,3 +81,20 @@ li {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+p.sold {
+	color: red;
+	font-size: 70px;
+	font-weight: bold;
+}
+
+.pagination a {
+	text-decoration: none;
+	color: white;
+	background-color: slateblue;
+}
+
+.pagination a:hover {
+	background-color: skyblue;
+	color: white;
+}
