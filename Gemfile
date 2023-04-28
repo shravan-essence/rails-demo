@@ -78,6 +78,7 @@ group :development, :test do
   gem "letter_opener"
   gem 'brakeman'
   gem 'stripe'
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
@@ -96,4 +97,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'rails-controller-testing'
+  gem "factory_bot_rails"
 end

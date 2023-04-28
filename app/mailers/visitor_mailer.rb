@@ -4,9 +4,10 @@ class VisitorMailer < ApplicationMailer
   def welcome_email(name, email)
     @visitor_name = name
     @visitor_email = email
-    p 222_222_222_222_222_222
-    p @visitor_email
-    p 2_222_222_222_222_222_222
     mail(to: @visitor_email, subject: 'Welcome to My Awesome Site')
+  end
+
+  def deliver_now
+    deliver
   end
 end

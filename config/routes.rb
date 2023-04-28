@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :checkouts 
   end
-  post "/success", to: "product#success"
   post '/webhooks/webhook', to: 'webhooks#webhook'
   # post "/products/:product_id/checkout", to: "checkout#create", as: "checkout"
 
