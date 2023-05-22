@@ -1,14 +1,18 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.after_initialize do
-    Bullet.enable        = true
-    Bullet.alert         = true
-    Bullet.bullet_logger = true
-    Bullet.console       = true
-    Bullet.rails_logger  = true
-    Bullet.add_footer    = true
-  end
+  # Configure 'rails notes' to inspect Cucumber files
+  config.annotations.register_directories('features')
+  config.annotations.register_extensions('feature') { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
+
+  # config.after_initialize do
+  #   Bullet.enable        = true
+  #   Bullet.alert         = true
+  #   Bullet.bullet_logger = true
+  #   Bullet.console       = true
+  #   Bullet.rails_logger  = true
+  #   Bullet.add_footer    = true
+  # end
   config.hosts << "4ebb-2401-4900-1c80-58ed-3b30-56f7-54cf-9346.ngrok-free.app"
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -99,9 +103,9 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.bullet_logger = true
-    Bullet.rails_logger = true
-  end
+  # config.after_initialize do
+  #   Bullet.enable = true
+  #   Bullet.bullet_logger = true
+  #   Bullet.rails_logger = true
+  # end
 end

@@ -7,11 +7,13 @@ class ArticlePolicy
   end
 
   def update?
-    student.admin? || !article.published?
+    #student.admin? || !article.published?
+    true
   end
 
   def create?
-    student.admin? || student.user?
+    true
+   # student.admin? || student.user?
   end
 
   def new?
@@ -19,10 +21,12 @@ class ArticlePolicy
   end
 
   def edit?
-    update?
+    #update?
+    true
   end
 
   def destroy?
-    student.admin?
+    #student.admin?
+    true
   end
 end

@@ -99,4 +99,7 @@ group :test do
   gem "webdrivers"
   gem 'rails-controller-testing'
   gem "factory_bot_rails"
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end

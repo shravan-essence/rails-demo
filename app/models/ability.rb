@@ -9,7 +9,8 @@ class Ability
     return unless current_student.present? # additional permissions for logged in users (they can read their own posts)
     can :read, :all
 
-    return unless current_student.admin?  # additional permissions for administrators
+    #add admin? in place of present?
+    return unless current_student.present?  # additional permissions for administrators
     can :manage, :all
 
 

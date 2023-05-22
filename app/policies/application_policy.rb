@@ -17,7 +17,8 @@ class ApplicationPolicy
   end
 
   def create?
-    @student.admin?
+    #@student.admin?
+    true
   end
 
   def new?
@@ -25,7 +26,8 @@ class ApplicationPolicy
   end
 
   def update?
-    @student.admin?
+    #@student.admin?
+    true
   end
 
   def edit?
@@ -33,7 +35,8 @@ class ApplicationPolicy
   end
 
   def destroy?
-    @student.admin?
+    #@student.admin?
+    true
   end
 
 end
