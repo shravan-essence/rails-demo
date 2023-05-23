@@ -1,6 +1,12 @@
+require_relative '../models/query_objects/products_query'
+
 class ProductsController < ApplicationController
 	def index
-		@products = Product.includes(:image_attachment => [:blob]).all
+		query = ProductsQuery.new(Product.all)
+    query = query.with_price_range
+    #query = query.order_by_name
+    @products = query.result
+		#@products = Product.includes(:image_attachment => [:blob]).all
 	end
 
 	def new
@@ -48,5 +54,4 @@ class ProductsController < ApplicationController
 	def product_detail
 		Product.find(params[:id])
 	end
-
 end

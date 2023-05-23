@@ -21,5 +21,6 @@ module Demo
     config.active_job.queue_adapter = :resque
     config.autoload_paths += %W(#{config.root}/lib)
     config.action_controller.allow_forgery_protection = false
+    config.autoload_paths += %W(#{config.root}/app/models/query_objects)
   end
 end
