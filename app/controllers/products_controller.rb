@@ -4,8 +4,9 @@ class ProductsController < ApplicationController
 	def index
 		query = ProductsQuery.new(Product.all)
     query = query.with_price_range
+    #query = query.greater_than
     #query = query.order_by_name
-    @products = query.result
+    @products = query
 		#@products = Product.includes(:image_attachment => [:blob]).all
 	end
 

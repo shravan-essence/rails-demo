@@ -6,15 +6,13 @@ class ProductsQuery
 
   def with_price_range
     @relation = @relation.order(:price)
-    self
+  end
+
+  def greater_than
+    @relation = @relation.where("price >?", 50000)
   end
 
   def order_by_name
     @relation = @relation.order(:name)
-    self
-  end
-
-  def result
-    @relation
   end
 end

@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
 	skip_forgery_protection
+	
 	def create
 		@product = product_detail
 		@image = url_for(@product.image)

@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   #callbacks
   before_action :authenticate_student!, except: %i[index show]
 
-
   def index
     @articles = Article.all
     
